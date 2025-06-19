@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -47,7 +48,7 @@ namespace ToDoList_.NET_FRAMEWORK_.Services
             {
                 using (var connection = new SqlConnection(DbConnection.ConnectionString))
                 {
-                   connection.Open();
+                    connection.Open();
                     // Check if the username already exists
                     string checkQuery = "SELECT COUNT(*) FROM Users WHERE Username = @username";
                     using (var checkCmd = new SqlCommand(checkQuery, connection))
@@ -60,10 +61,11 @@ namespace ToDoList_.NET_FRAMEWORK_.Services
                             return false;
                         }
                     }
-            }
-         
+                }
 
-                //Register a new user in the database
+                string hashedPassword = HashPassword(password);
+
+                //Register a new user
                 using (var connection = new SqlConnection(DbConnection.ConnectionString))
                 {
                     connection.Open();
@@ -71,7 +73,7 @@ namespace ToDoList_.NET_FRAMEWORK_.Services
                     using (var insertCmd = new SqlCommand(query, connection))
                     {
                         insertCmd.Parameters.AddWithValue("@username", username);
-                        insertCmd.Parameters.AddWithValue("@password", password);
+                        insertCmd.Parameters.AddWithValue("@password", hashedPassword);
                         int rowsAffected = insertCmd.ExecuteNonQuery();
                         return rowsAffected > 0;
                     }
@@ -92,7 +94,7 @@ namespace ToDoList_.NET_FRAMEWORK_.Services
                 {
                     connection.Open();
                     string updateQuery = "UPDATE Users SET Password = @newPassword & Username=@username";
-                    using(var updateCmd = new SqlCommand(updateQuery, connection))
+                    using (var updateCmd = new SqlCommand(updateQuery, connection))
                     {
                         updateCmd.Parameters.AddWithValue("@username", username);
                         updateCmd.Parameters.AddWithValue("@newPassword", newPassword);
@@ -108,6 +110,21 @@ namespace ToDoList_.NET_FRAMEWORK_.Services
             }
         }
 
+        public string HashPassword(string password)
+        {
+            using (SHA256 sha256Hash = SHA256.Create()) {
 
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            
+            }
+
+
+        }
     }
 }
