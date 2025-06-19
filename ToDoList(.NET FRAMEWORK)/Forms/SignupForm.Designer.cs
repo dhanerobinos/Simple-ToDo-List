@@ -99,7 +99,7 @@
             this.panel1.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.panel1.Location = new System.Drawing.Point(-48, -17);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 384);
+            this.panel1.Size = new System.Drawing.Size(261, 418);
             this.panel1.TabIndex = 10;
             // 
             // label4
@@ -145,7 +145,7 @@
             this.AcceptButton = this.btnSignup;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 367);
+            this.ClientSize = new System.Drawing.Size(550, 400);
             this.Controls.Add(this.linkLogin);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);

@@ -30,6 +30,7 @@ namespace ToDoList_.NET_FRAMEWORK_.Forms
             }
             else if (_authService.RegisterUser(username, password))
             {
+                
                 MessageBox.Show("Registration successful! You can now log in.");
                 this.Hide();
                 LoginForm loginForm = new LoginForm();
