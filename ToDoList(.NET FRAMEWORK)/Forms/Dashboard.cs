@@ -28,6 +28,7 @@ namespace ToDoList_.NET_FRAMEWORK_.Forms
                 f.Dock = DockStyle.Fill;
                 this.mainPanel.Controls.Add(f);
                 this.mainPanel.Tag = f;
+                f.BringToFront();  //brings the child form on top
                 f.Show();
             }
         }
