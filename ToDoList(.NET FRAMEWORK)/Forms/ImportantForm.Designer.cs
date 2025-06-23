@@ -28,36 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.iconbtnImportant = new FontAwesome.Sharp.IconButton();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
-            // label1
+            // iconbtnImportant
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 137);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(371, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "IMPORTANT FORM";
+            this.iconbtnImportant.FlatAppearance.BorderSize = 0;
+            this.iconbtnImportant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconbtnImportant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconbtnImportant.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.iconbtnImportant.IconColor = System.Drawing.Color.Black;
+            this.iconbtnImportant.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconbtnImportant.IconSize = 30;
+            this.iconbtnImportant.Location = new System.Drawing.Point(-22, 1);
+            this.iconbtnImportant.Name = "iconbtnImportant";
+            this.iconbtnImportant.Size = new System.Drawing.Size(177, 39);
+            this.iconbtnImportant.TabIndex = 3;
+            this.iconbtnImportant.Text = "Important";
+            this.iconbtnImportant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconbtnImportant.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(12, 46);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(357, 294);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // ImportantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 352);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.iconbtnImportant);
+            this.Controls.Add(this.listView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ImportantForm";
             this.Text = "ImportantForm";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton iconbtnImportant;
+        private System.Windows.Forms.ListView listView1;
     }
 }

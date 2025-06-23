@@ -33,12 +33,19 @@
             this.iconbtnMyday = new FontAwesome.Sharp.IconButton();
             this.icnbtnPlanned = new FontAwesome.Sharp.IconButton();
             this.iconbtnImportant = new FontAwesome.Sharp.IconButton();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.toDoListAppDBDataSet1 = new ToDoList_.NET_FRAMEWORK_.ToDoListAppDBDataSet();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnAdd = new FontAwesome.Sharp.IconButton();
+            this.addtaskPanel = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSaveTasks = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnDelete = new FontAwesome.Sharp.IconButton();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toDoListAppDBDataSet1)).BeginInit();
+            this.addtaskPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -125,13 +132,6 @@
             this.iconbtnImportant.UseVisualStyleBackColor = true;
             this.iconbtnImportant.Click += new System.EventHandler(this.iconbtnImportant_Click);
             // 
-            // mainPanel
-            // 
-            this.mainPanel.Location = new System.Drawing.Point(157, 36);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(381, 289);
-            this.mainPanel.TabIndex = 2;
-            // 
             // toDoListAppDBDataSet1
             // 
             this.toDoListAppDBDataSet1.DataSetName = "ToDoListAppDBDataSet";
@@ -145,28 +145,102 @@
             this.panel3.Size = new System.Drawing.Size(551, 33);
             this.panel3.TabIndex = 3;
             // 
-            // btnAdd
+            // addtaskPanel
             // 
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnAdd.IconColor = System.Drawing.Color.Black;
-            this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAdd.IconSize = 30;
-            this.btnAdd.Location = new System.Drawing.Point(170, 332);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(357, 56);
-            this.btnAdd.TabIndex = 8;
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.addtaskPanel.Controls.Add(this.textBox1);
+            this.addtaskPanel.Controls.Add(this.btnSaveTasks);
+            this.addtaskPanel.Controls.Add(this.iconButton1);
+            this.addtaskPanel.Controls.Add(this.dateTimePicker1);
+            this.addtaskPanel.Location = new System.Drawing.Point(181, 332);
+            this.addtaskPanel.Name = "addtaskPanel";
+            this.addtaskPanel.Size = new System.Drawing.Size(357, 56);
+            this.addtaskPanel.TabIndex = 9;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(63, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(204, 20);
+            this.textBox1.TabIndex = 10;
+            // 
+            // btnSaveTasks
+            // 
+            this.btnSaveTasks.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnSaveTasks.IconColor = System.Drawing.Color.Black;
+            this.btnSaveTasks.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSaveTasks.Location = new System.Drawing.Point(3, 7);
+            this.btnSaveTasks.Name = "btnSaveTasks";
+            this.btnSaveTasks.Size = new System.Drawing.Size(55, 43);
+            this.btnSaveTasks.TabIndex = 9;
+            this.btnSaveTasks.UseVisualStyleBackColor = true;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(311, 9);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(43, 44);
+            this.iconButton1.TabIndex = 2;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(273, 19);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(32, 20);
+            this.dateTimePicker1.TabIndex = 1;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnDelete.IconColor = System.Drawing.Color.Black;
+            this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDelete.IconSize = 20;
+            this.btnDelete.Location = new System.Drawing.Point(439, 36);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(99, 34);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 30;
+            this.iconButton3.Location = new System.Drawing.Point(331, 34);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(117, 33);
+            this.iconButton3.TabIndex = 10;
+            this.iconButton3.Text = "Complete";
+            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Location = new System.Drawing.Point(157, 71);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(381, 254);
+            this.mainPanel.TabIndex = 2;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 400);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.iconButton3);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.addtaskPanel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
@@ -177,6 +251,8 @@
             this.TransparencyKey = System.Drawing.Color.White;
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toDoListAppDBDataSet1)).EndInit();
+            this.addtaskPanel.ResumeLayout(false);
+            this.addtaskPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -189,8 +265,14 @@
         private FontAwesome.Sharp.IconButton iconbtnMyday;
         private FontAwesome.Sharp.IconButton icnbtnPlanned;
         private FontAwesome.Sharp.IconButton iconbtnTasks;
-        private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Panel panel3;
-        private FontAwesome.Sharp.IconButton btnAdd;
+        private System.Windows.Forms.Panel addtaskPanel;
+        private System.Windows.Forms.TextBox textBox1;
+        private FontAwesome.Sharp.IconButton btnSaveTasks;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private FontAwesome.Sharp.IconButton btnDelete;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private System.Windows.Forms.Panel mainPanel;
     }
 }

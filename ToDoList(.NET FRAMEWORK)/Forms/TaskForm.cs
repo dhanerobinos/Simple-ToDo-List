@@ -17,10 +17,6 @@ namespace ToDoList_.NET_FRAMEWORK_.Forms
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            addtaskPanel.Visible = true;
-            addtaskPanel.BringToFront();
-        }
+       
     }
 }
