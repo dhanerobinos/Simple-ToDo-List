@@ -7,12 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ToDoList_.NET_FRAMEWORK_.DataAccess;
+using ToDoList_.NET_FRAMEWORK_.Services;
 
 
 namespace ToDoList_.NET_FRAMEWORK_.Services
 {
     public class AuthService
     {
+        private PasswordService passwordService;
         public bool ValidateLogin(string username, string password)
         {
             try
@@ -63,7 +65,7 @@ namespace ToDoList_.NET_FRAMEWORK_.Services
                     }
                 }
 
-                string hashedPassword = HashPassword(password);
+                string hashedPassword = passwordService.HashPassword(password);
 
                 //Register a new user
                 using (var connection = new SqlConnection(DbConnection.ConnectionString))
@@ -108,23 +110,6 @@ namespace ToDoList_.NET_FRAMEWORK_.Services
                 MessageBox.Show(ex.Message);
                 return false;
             }
-        }
-
-        public string HashPassword(string password)
-        {
-            using (SHA256 sha256Hash = SHA256.Create()) {
-
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    builder.Append(bytes[i].ToString("x2"));
-                }
-                return builder.ToString();
-            
-            }
-
-
         }
     }
 }
