@@ -54,10 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\DbConnection.cs" />
-    <Compile Include="Forms\ForgotPasswordForm.cs">
+    <Compile Include="Forms\LoginAndRegister\ForgotPasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ForgotPasswordForm.Designer.cs">
+    <Compile Include="Forms\LoginAndRegister\ForgotPasswordForm.Designer.cs">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dashboard.cs">
@@ -72,10 +72,10 @@
     <Compile Include="Forms\ImportantForm.Designer.cs">
       <DependentUpon>ImportantForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LoginForm.cs">
+    <Compile Include="Forms\LoginAndRegister\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LoginForm.Designer.cs">
+    <Compile Include="Forms\LoginAndRegister\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MyDayForm.cs">
@@ -90,10 +90,10 @@
     <Compile Include="Forms\PlannedForm.Designer.cs">
       <DependentUpon>PlannedForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SignupForm.cs">
+    <Compile Include="Forms\LoginAndRegister\SignupForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SignupForm.Designer.cs">
+    <Compile Include="Forms\LoginAndRegister\SignupForm.Designer.cs">
       <DependentUpon>SignupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TaskForm.cs">
@@ -102,16 +102,20 @@
     <Compile Include="Forms\TaskForm.Designer.cs">
       <DependentUpon>TaskForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ICrudForm.cs" />
     <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\Tasks.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\PasswordService.cs" />
+    <Compile Include="Services\TaskService.cs" />
     <Compile Include="ToDoListAppDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ToDoListAppDBDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\ForgotPasswordForm.resx">
+    <EmbeddedResource Include="Forms\LoginAndRegister\ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard.resx">
@@ -120,7 +124,7 @@
     <EmbeddedResource Include="Forms\ImportantForm.resx">
       <DependentUpon>ImportantForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LoginForm.resx">
+    <EmbeddedResource Include="Forms\LoginAndRegister\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MyDayForm.resx">
@@ -129,7 +133,7 @@
     <EmbeddedResource Include="Forms\PlannedForm.resx">
       <DependentUpon>PlannedForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SignupForm.resx">
+    <EmbeddedResource Include="Forms\LoginAndRegister\SignupForm.resx">
       <DependentUpon>SignupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskForm.resx">
@@ -170,5 +174,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

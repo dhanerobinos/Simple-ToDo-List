@@ -1,4 +1,4 @@
-﻿namespace ToDoList_.NET_FRAMEWORK_.Forms
+﻿namespace ToDoList
 {
     partial class Dashboard
     {
@@ -33,7 +33,7 @@
             this.iconbtnMyday = new FontAwesome.Sharp.IconButton();
             this.icnbtnPlanned = new FontAwesome.Sharp.IconButton();
             this.iconbtnImportant = new FontAwesome.Sharp.IconButton();
-            this.toDoListAppDBDataSet1 = new ToDoList_.NET_FRAMEWORK_.ToDoListAppDBDataSet();
+            this.toDoListAppDBDataSet1 = new ToDoList.ToDoListAppDBDataSet();
             this.panel3 = new System.Windows.Forms.Panel();
             this.addtaskPanel = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();

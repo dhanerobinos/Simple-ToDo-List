@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToDoList_.NET_FRAMEWORK_.Interfaces
+namespace ToDoList.Interfaces
 {
     public interface ICrudForm
     {

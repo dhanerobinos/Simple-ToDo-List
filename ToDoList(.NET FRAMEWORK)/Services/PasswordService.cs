@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToDoList_.NET_FRAMEWORK_.Services
+namespace ToDoList.Services
 {
     public class PasswordService
     {

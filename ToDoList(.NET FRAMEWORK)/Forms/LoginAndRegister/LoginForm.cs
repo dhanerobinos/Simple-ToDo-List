@@ -1,10 +1,11 @@
 ﻿using System;
-using ToDoList_.NET_FRAMEWORK_.Services;
+using ToDoList.Services;
 using System.Windows.Forms;
 using System.Drawing;
-using ToDoList_.NET_FRAMEWORK_.Forms;
+using ToDoList.Forms;
+using ToDoList.LoginAndRegister;
 
-namespace ToDoList_.NET_FRAMEWORK_
+namespace ToDoList.Forms
 {
     public partial class LoginForm : Form
     {

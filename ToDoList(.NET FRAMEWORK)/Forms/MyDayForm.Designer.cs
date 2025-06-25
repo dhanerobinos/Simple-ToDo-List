@@ -1,4 +1,4 @@
-﻿namespace ToDoList_.NET_FRAMEWORK_.Forms
+﻿namespace ToDoList.Forms
 {
     partial class MyDayForm
     {

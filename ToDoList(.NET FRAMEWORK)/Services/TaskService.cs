@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows;
-using ToDoList_.NET_FRAMEWORK_.DataAccess;
-using ToDoList_.NET_FRAMEWORK_.Models;
+using ToDoList.DataAcess;
+using ToDoList.Models;
 
 namespace Services
 {

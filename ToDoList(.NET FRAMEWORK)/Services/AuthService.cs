@@ -6,11 +6,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ToDoList_.NET_FRAMEWORK_.DataAccess;
-using ToDoList_.NET_FRAMEWORK_.Services;
+using ToDoList.DataAcess;
+using ToDoList.Services;
 
 
-namespace ToDoList_.NET_FRAMEWORK_.Services
+namespace ToDoList.Services
 {
     public class AuthService
     {

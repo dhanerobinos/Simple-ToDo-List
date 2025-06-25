@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ToDoList_.NET_FRAMEWORK_.Properties {
+namespace ToDoList.Properties {
     using System;
     
     

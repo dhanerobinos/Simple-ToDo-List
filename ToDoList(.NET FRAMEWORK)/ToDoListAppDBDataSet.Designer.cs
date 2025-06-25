@@ -10,7 +10,9 @@
 
 #pragma warning disable 1591
 
-namespace ToDoList_.NET_FRAMEWORK_ {
+using ToDoList;
+
+namespace ToDoList {
     
     
     /// <summary>
@@ -649,7 +651,7 @@ namespace ToDoList_.NET_FRAMEWORK_ {
         }
     }
 }
-namespace ToDoList_.NET_FRAMEWORK_.ToDoListAppDBDataSetTableAdapters {
+namespace ToDoList_.ToDoListAppDBDataSetTableAdapters {
     
     
     /// <summary>
@@ -810,7 +812,7 @@ namespace ToDoList_.NET_FRAMEWORK_.ToDoListAppDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ToDoList_.NET_FRAMEWORK_.Properties.Settings.Default.ToDoListAppDBConnectionString;
+            this._connection.ConnectionString = global::ToDoList.Properties.Settings.Default.ToDoListAppDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -840,7 +842,7 @@ namespace ToDoList_.NET_FRAMEWORK_.ToDoListAppDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ToDoListAppDBDataSet.UsersDataTable GetData() {
+        public virtual ToDoList.ToDoListAppDBDataSet.UsersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             ToDoListAppDBDataSet.UsersDataTable dataTable = new ToDoListAppDBDataSet.UsersDataTable();
             this.Adapter.Fill(dataTable);

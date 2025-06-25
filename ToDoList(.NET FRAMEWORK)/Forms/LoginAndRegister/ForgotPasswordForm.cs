@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ToDoList.Forms;
 
-namespace ToDoList_.NET_FRAMEWORK_
+namespace ToDoList.LoginAndRegister
+
 {
     public partial class ForgotPasswordForm : Form
     {
         public ForgotPasswordForm()
         {
-            InitializeComponent();
+           InitializeComponent();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

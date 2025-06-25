@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ToDoList.Forms;
 
-namespace ToDoList_.NET_FRAMEWORK_.Forms
+namespace ToDoList
 {
     public partial class Dashboard : Form
     {
@@ -17,20 +18,26 @@ namespace ToDoList_.NET_FRAMEWORK_.Forms
             InitializeComponent();
         }
 
-        public void LoadForm(object formObj)
-        {
-            if (this.mainPanel.Controls.Count > 0)
-                this.mainPanel.Controls.RemoveAt(0);
+     
+            private Form activeForm = null;
 
-            if (formObj is Form f)
-            {
-                f.TopLevel = false;
-                f.Dock = DockStyle.Fill;
-                this.mainPanel.Controls.Add(f);
-                this.mainPanel.Tag = f;
-                f.BringToFront();  //brings the child form on top
-                f.Show();
-            }
+        private void LoadForm(Form childForm)
+        {
+            // Close the currently active form if any
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(childForm);
+            mainPanel.Tag = childForm;
+
+            childForm.BringToFront();
+            childForm.Show();
         }
 
         private void iconbtnMyday_Click(object sender, EventArgs e)
@@ -38,9 +45,9 @@ namespace ToDoList_.NET_FRAMEWORK_.Forms
             LoadForm(new MyDayForm());
         }
 
-        private void iconbtnImportant_Click(object sender, EventArgs e)
+        private void iconbtnTasks_Click(object sender, EventArgs e)
         {
-            LoadForm(new ImportantForm());
+            LoadForm(new TaskForm());
         }
 
         private void icnbtnPlanned_Click(object sender, EventArgs e)
@@ -48,9 +55,10 @@ namespace ToDoList_.NET_FRAMEWORK_.Forms
             LoadForm(new PlannedForm());
         }
 
-        private void iconbtnTasks_Click(object sender, EventArgs e)
+        private void iconbtnImportant_Click(object sender, EventArgs e)
         {
-            LoadForm(new TaskForm());
+            LoadForm(new ImportantForm());
         }
+        
     }
 }

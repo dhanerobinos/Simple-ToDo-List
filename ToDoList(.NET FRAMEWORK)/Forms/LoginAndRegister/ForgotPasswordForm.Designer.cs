@@ -1,4 +1,4 @@
-﻿namespace ToDoList_.NET_FRAMEWORK_
+﻿namespace ToDoList.LoginAndRegister
 {
     partial class ForgotPasswordForm
     {

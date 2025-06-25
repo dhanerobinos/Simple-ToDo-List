@@ -1,8 +1,8 @@
 ﻿using System;
-using ToDoList_.NET_FRAMEWORK_.Services;
+using ToDoList.Services;
 using System.Windows.Forms;
 
-namespace ToDoList_.NET_FRAMEWORK_.Forms
+namespace ToDoList.Forms
 {
     public partial class SignupForm : Form
     {
