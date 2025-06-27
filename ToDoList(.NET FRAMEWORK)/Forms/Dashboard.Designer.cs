@@ -35,17 +35,18 @@
             this.iconbtnImportant = new FontAwesome.Sharp.IconButton();
             this.toDoListAppDBDataSet1 = new ToDoList.ToDoListAppDBDataSet();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.addtaskPanel = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnSaveTasks = new FontAwesome.Sharp.IconButton();
+            this.taskPanel = new System.Windows.Forms.Panel();
+            this.btnSaveTask = new FontAwesome.Sharp.IconButton();
+            this.txtTaskTitle = new System.Windows.Forms.TextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDueDate = new System.Windows.Forms.DateTimePicker();
+            this.btnAddTasks = new FontAwesome.Sharp.IconButton();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toDoListAppDBDataSet1)).BeginInit();
-            this.addtaskPanel.SuspendLayout();
+            this.taskPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -145,56 +146,70 @@
             this.panel3.Size = new System.Drawing.Size(716, 33);
             this.panel3.TabIndex = 3;
             // 
-            // addtaskPanel
+            // taskPanel
             // 
-            this.addtaskPanel.Controls.Add(this.textBox1);
-            this.addtaskPanel.Controls.Add(this.btnSaveTasks);
-            this.addtaskPanel.Controls.Add(this.iconButton1);
-            this.addtaskPanel.Controls.Add(this.dateTimePicker1);
-            this.addtaskPanel.Location = new System.Drawing.Point(181, 430);
-            this.addtaskPanel.Name = "addtaskPanel";
-            this.addtaskPanel.Size = new System.Drawing.Size(357, 56);
-            this.addtaskPanel.TabIndex = 9;
+            this.taskPanel.Controls.Add(this.btnSaveTask);
+            this.taskPanel.Controls.Add(this.txtTaskTitle);
+            this.taskPanel.Controls.Add(this.iconButton1);
+            this.taskPanel.Controls.Add(this.dateTimePickerDueDate);
+            this.taskPanel.Location = new System.Drawing.Point(171, 430);
+            this.taskPanel.Name = "taskPanel";
+            this.taskPanel.Size = new System.Drawing.Size(544, 56);
+            this.taskPanel.TabIndex = 9;
+            this.taskPanel.Visible = false;
             // 
-            // textBox1
+            // btnSaveTask
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(63, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(204, 20);
-            this.textBox1.TabIndex = 10;
+            this.btnSaveTask.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnSaveTask.IconColor = System.Drawing.Color.Black;
+            this.btnSaveTask.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSaveTask.Location = new System.Drawing.Point(3, 0);
+            this.btnSaveTask.Name = "btnSaveTask";
+            this.btnSaveTask.Size = new System.Drawing.Size(55, 53);
+            this.btnSaveTask.TabIndex = 11;
+            this.btnSaveTask.UseVisualStyleBackColor = true;
+            this.btnSaveTask.Click += new System.EventHandler(this.btnSaveTask_Click);
             // 
-            // btnSaveTasks
+            // txtTaskTitle
             // 
-            this.btnSaveTasks.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.btnSaveTasks.IconColor = System.Drawing.Color.Black;
-            this.btnSaveTasks.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSaveTasks.Location = new System.Drawing.Point(3, 7);
-            this.btnSaveTasks.Name = "btnSaveTasks";
-            this.btnSaveTasks.Size = new System.Drawing.Size(55, 43);
-            this.btnSaveTasks.TabIndex = 9;
-            this.btnSaveTasks.UseVisualStyleBackColor = true;
+            this.txtTaskTitle.BackColor = System.Drawing.SystemColors.Info;
+            this.txtTaskTitle.Location = new System.Drawing.Point(63, 19);
+            this.txtTaskTitle.Name = "txtTaskTitle";
+            this.txtTaskTitle.Size = new System.Drawing.Size(381, 20);
+            this.txtTaskTitle.TabIndex = 10;
             // 
             // iconButton1
             // 
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(311, 9);
+            this.iconButton1.Location = new System.Drawing.Point(488, 6);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(43, 44);
             this.iconButton1.TabIndex = 2;
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // dateTimePickerDueDate
             // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.Info;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dateTimePicker1.Location = new System.Drawing.Point(273, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(32, 20);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePickerDueDate.CalendarForeColor = System.Drawing.SystemColors.Info;
+            this.dateTimePickerDueDate.CalendarMonthBackground = System.Drawing.SystemColors.Info;
+            this.dateTimePickerDueDate.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dateTimePickerDueDate.Location = new System.Drawing.Point(450, 16);
+            this.dateTimePickerDueDate.Name = "dateTimePickerDueDate";
+            this.dateTimePickerDueDate.Size = new System.Drawing.Size(32, 20);
+            this.dateTimePickerDueDate.TabIndex = 1;
+            // 
+            // btnAddTasks
+            // 
+            this.btnAddTasks.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAddTasks.IconColor = System.Drawing.Color.Black;
+            this.btnAddTasks.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddTasks.Location = new System.Drawing.Point(171, 430);
+            this.btnAddTasks.Name = "btnAddTasks";
+            this.btnAddTasks.Size = new System.Drawing.Size(55, 53);
+            this.btnAddTasks.TabIndex = 9;
+            this.btnAddTasks.UseVisualStyleBackColor = true;
+            this.btnAddTasks.Click += new System.EventHandler(this.btnAddTasks_Click);
             // 
             // btnDelete
             // 
@@ -243,8 +258,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 498);
             this.Controls.Add(this.iconButton3);
+            this.Controls.Add(this.btnAddTasks);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.addtaskPanel);
+            this.Controls.Add(this.taskPanel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
@@ -255,8 +271,8 @@
             this.TransparencyKey = System.Drawing.Color.White;
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toDoListAppDBDataSet1)).EndInit();
-            this.addtaskPanel.ResumeLayout(false);
-            this.addtaskPanel.PerformLayout();
+            this.taskPanel.ResumeLayout(false);
+            this.taskPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -270,13 +286,14 @@
         private FontAwesome.Sharp.IconButton icnbtnPlanned;
         private FontAwesome.Sharp.IconButton iconbtnTasks;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel addtaskPanel;
-        private System.Windows.Forms.TextBox textBox1;
-        private FontAwesome.Sharp.IconButton btnSaveTasks;
+        private System.Windows.Forms.Panel taskPanel;
+        private System.Windows.Forms.TextBox txtTaskTitle;
+        private FontAwesome.Sharp.IconButton btnAddTasks;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDueDate;
         private FontAwesome.Sharp.IconButton btnDelete;
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.Panel mainPanel;
+        private FontAwesome.Sharp.IconButton btnSaveTask;
     }
 }

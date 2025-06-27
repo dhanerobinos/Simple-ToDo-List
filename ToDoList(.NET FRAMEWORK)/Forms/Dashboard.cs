@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using ToDoList.Forms;
+using ToDoList.Interfaces;
+
 
 namespace ToDoList
 {
@@ -18,8 +14,8 @@ namespace ToDoList
             InitializeComponent();
         }
 
-     
-            private Form activeForm = null;
+
+        private Form activeForm = null;
 
         private void LoadForm(Form childForm)
         {
@@ -59,6 +55,17 @@ namespace ToDoList
         {
             LoadForm(new ImportantForm());
         }
-        
+
+
+        private void btnAddTasks_Click(object sender, EventArgs e)
+        {
+            btnAddTasks.Hide();
+            taskPanel.Show();
+        }
+        private void btnSaveTask_Click(object sender, EventArgs e)
+        {
+           
+
+        }
     }
 }
