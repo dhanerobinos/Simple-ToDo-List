@@ -57,7 +57,7 @@
             this.panel1.Controls.Add(this.iconbtnImportant);
             this.panel1.Location = new System.Drawing.Point(1, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 432);
+            this.panel1.Size = new System.Drawing.Size(150, 473);
             this.panel1.TabIndex = 0;
             // 
             // iconbtnTasks
@@ -142,7 +142,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Location = new System.Drawing.Point(1, -3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(551, 33);
+            this.panel3.Size = new System.Drawing.Size(716, 33);
             this.panel3.TabIndex = 3;
             // 
             // addtaskPanel
@@ -151,13 +151,14 @@
             this.addtaskPanel.Controls.Add(this.btnSaveTasks);
             this.addtaskPanel.Controls.Add(this.iconButton1);
             this.addtaskPanel.Controls.Add(this.dateTimePicker1);
-            this.addtaskPanel.Location = new System.Drawing.Point(181, 332);
+            this.addtaskPanel.Location = new System.Drawing.Point(181, 430);
             this.addtaskPanel.Name = "addtaskPanel";
             this.addtaskPanel.Size = new System.Drawing.Size(357, 56);
             this.addtaskPanel.TabIndex = 9;
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
             this.textBox1.Location = new System.Drawing.Point(63, 19);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(204, 20);
@@ -187,6 +188,9 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.Info;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
             this.dateTimePicker1.Location = new System.Drawing.Point(273, 19);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(32, 20);
@@ -201,7 +205,7 @@
             this.btnDelete.IconColor = System.Drawing.Color.Black;
             this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDelete.IconSize = 20;
-            this.btnDelete.Location = new System.Drawing.Point(439, 36);
+            this.btnDelete.Location = new System.Drawing.Point(616, 34);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(99, 34);
             this.btnDelete.TabIndex = 6;
@@ -218,7 +222,7 @@
             this.iconButton3.IconColor = System.Drawing.Color.Black;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 30;
-            this.iconButton3.Location = new System.Drawing.Point(331, 34);
+            this.iconButton3.Location = new System.Drawing.Point(508, 32);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Size = new System.Drawing.Size(117, 33);
             this.iconButton3.TabIndex = 10;
@@ -230,14 +234,14 @@
             // 
             this.mainPanel.Location = new System.Drawing.Point(157, 71);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(381, 254);
+            this.mainPanel.Size = new System.Drawing.Size(548, 353);
             this.mainPanel.TabIndex = 2;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 400);
+            this.ClientSize = new System.Drawing.Size(717, 498);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.addtaskPanel);

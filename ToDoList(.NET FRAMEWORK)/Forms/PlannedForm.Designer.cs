@@ -41,7 +41,7 @@
             this.icnbtnPlanned.IconColor = System.Drawing.Color.Black;
             this.icnbtnPlanned.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icnbtnPlanned.IconSize = 30;
-            this.icnbtnPlanned.Location = new System.Drawing.Point(-20, 10);
+            this.icnbtnPlanned.Location = new System.Drawing.Point(-22, 1);
             this.icnbtnPlanned.Name = "icnbtnPlanned";
             this.icnbtnPlanned.Size = new System.Drawing.Size(177, 40);
             this.icnbtnPlanned.TabIndex = 9;
@@ -51,10 +51,11 @@
             // 
             // listView1
             // 
+            this.listView1.BackColor = System.Drawing.SystemColors.Control;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 56);
+            this.listView1.Location = new System.Drawing.Point(12, 46);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(357, 284);
+            this.listView1.Size = new System.Drawing.Size(524, 294);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -62,7 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 352);
+            this.ClientSize = new System.Drawing.Size(548, 353);
             this.Controls.Add(this.icnbtnPlanned);
             this.Controls.Add(this.listView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

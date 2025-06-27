@@ -41,9 +41,9 @@
             this.iconbtnTasks.IconColor = System.Drawing.Color.Black;
             this.iconbtnTasks.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconbtnTasks.IconSize = 30;
-            this.iconbtnTasks.Location = new System.Drawing.Point(-24, -2);
+            this.iconbtnTasks.Location = new System.Drawing.Point(-22, 1);
             this.iconbtnTasks.Name = "iconbtnTasks";
-            this.iconbtnTasks.Size = new System.Drawing.Size(177, 52);
+            this.iconbtnTasks.Size = new System.Drawing.Size(177, 39);
             this.iconbtnTasks.TabIndex = 6;
             this.iconbtnTasks.Text = "Tasks";
             this.iconbtnTasks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -51,10 +51,11 @@
             // 
             // listView1
             // 
+            this.listView1.BackColor = System.Drawing.SystemColors.Control;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 56);
+            this.listView1.Location = new System.Drawing.Point(12, 46);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(357, 284);
+            this.listView1.Size = new System.Drawing.Size(524, 294);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -62,7 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 352);
+            this.ClientSize = new System.Drawing.Size(548, 353);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.iconbtnTasks);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

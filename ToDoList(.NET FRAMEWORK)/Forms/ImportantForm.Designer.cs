@@ -51,10 +51,11 @@
             // 
             // listImportant
             // 
+            this.listImportant.BackColor = System.Drawing.SystemColors.Control;
             this.listImportant.HideSelection = false;
             this.listImportant.Location = new System.Drawing.Point(12, 46);
             this.listImportant.Name = "listImportant";
-            this.listImportant.Size = new System.Drawing.Size(357, 294);
+            this.listImportant.Size = new System.Drawing.Size(524, 294);
             this.listImportant.TabIndex = 0;
             this.listImportant.UseCompatibleStateImageBehavior = false;
             // 
@@ -62,7 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 352);
+            this.ClientSize = new System.Drawing.Size(548, 353);
             this.Controls.Add(this.iconbtnImportant);
             this.Controls.Add(this.listImportant);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
