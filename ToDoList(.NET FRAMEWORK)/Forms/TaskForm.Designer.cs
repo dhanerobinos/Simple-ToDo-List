@@ -30,9 +30,6 @@
         {
             this.iconbtnTasks = new FontAwesome.Sharp.IconButton();
             this.listViewTasks = new System.Windows.Forms.ListView();
-            this.ClmnTaskTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ClmnDueDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ClmnIsCompleted = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // iconbtnTasks
@@ -54,29 +51,15 @@
             // 
             // listViewTasks
             // 
-            this.listViewTasks.BackColor = System.Drawing.SystemColors.Control;
-            this.listViewTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ClmnTaskTitle,
-            this.ClmnDueDate,
-            this.ClmnIsCompleted});
+            this.listViewTasks.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.listViewTasks.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.listViewTasks.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewTasks.HideSelection = false;
             this.listViewTasks.Location = new System.Drawing.Point(12, 46);
             this.listViewTasks.Name = "listViewTasks";
             this.listViewTasks.Size = new System.Drawing.Size(524, 294);
             this.listViewTasks.TabIndex = 7;
             this.listViewTasks.UseCompatibleStateImageBehavior = false;
-            // 
-            // ClmnTaskTitle
-            // 
-            this.ClmnTaskTitle.Text = "Task";
-            // 
-            // ClmnDueDate
-            // 
-            this.ClmnDueDate.Text = "Due Date";
-            // 
-            // ClmnIsCompleted
-            // 
-            this.ClmnIsCompleted.Text = "Status";
             // 
             // TaskForm
             // 
@@ -96,8 +79,5 @@
 
         private FontAwesome.Sharp.IconButton iconbtnTasks;
         private System.Windows.Forms.ListView listViewTasks;
-        private System.Windows.Forms.ColumnHeader ClmnTaskTitle;
-        private System.Windows.Forms.ColumnHeader ClmnDueDate;
-        private System.Windows.Forms.ColumnHeader ClmnIsCompleted;
     }
 }

@@ -8,9 +8,9 @@ namespace ToDoList.Models
 {
     public class TaskModel
     {
-        public int TaskId { get; set; }
+        public int TaskID { get; set; }
         public string TaskTitle { get; set; }
-        public DateTime DueDate { get; set; }
-        public bool IsCompleted { get; set; }
+        public DateTime TaskDueDate { get; set; }
+        public bool TaskIsCompleted { get; set; }
     }
 }
