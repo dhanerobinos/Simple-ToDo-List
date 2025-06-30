@@ -54,6 +54,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\DbConnection.cs" />
+    <Compile Include="DataAccess\ListDataAccess.cs" />
+    <Compile Include="Forms\CRUDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CRUDForm.Designer.cs">
+      <DependentUpon>CRUDForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginAndRegister\ForgotPasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,9 +109,12 @@
     <Compile Include="Forms\TaskForm.Designer.cs">
       <DependentUpon>TaskForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\ICrudForm.cs" />
+    <Compile Include="Interfaces\ICRUDForm.cs" />
+    <Compile Include="Models\ImportantTaskModel.cs" />
+    <Compile Include="Models\MyDayTaskModel.cs" />
+    <Compile Include="Models\PlannedTaskModel.cs" />
     <Compile Include="Models\Users.cs" />
-    <Compile Include="Models\Tasks.cs" />
+    <Compile Include="Models\TaskModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AuthService.cs" />
@@ -115,6 +125,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ToDoListAppDBDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\CRUDForm.resx">
+      <DependentUpon>CRUDForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginAndRegister\ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </EmbeddedResource>

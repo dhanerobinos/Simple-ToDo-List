@@ -23,7 +23,7 @@ namespace ToDoList.Services
                 using (var connection = new SqlConnection(DbConnection.ConnectionString))
                 {
                     connection.Open();
-                    string query = "SELECT COUNT(*) FROM Users WHERE Username = @username AND Password = @password";
+                    string query = "SELECT Id FROM Users WHERE Username = @username AND Password = @password";
 
                     using (var cmd = new SqlCommand(query, connection))
                     {

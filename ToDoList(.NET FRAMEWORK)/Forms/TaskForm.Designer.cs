@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.iconbtnTasks = new FontAwesome.Sharp.IconButton();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewTasks = new System.Windows.Forms.ListView();
+            this.ClmnTaskTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ClmnDueDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ClmnIsCompleted = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // iconbtnTasks
@@ -49,22 +52,38 @@
             this.iconbtnTasks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconbtnTasks.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // listViewTasks
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.Control;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 46);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(524, 294);
-            this.listView1.TabIndex = 7;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewTasks.BackColor = System.Drawing.SystemColors.Control;
+            this.listViewTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ClmnTaskTitle,
+            this.ClmnDueDate,
+            this.ClmnIsCompleted});
+            this.listViewTasks.HideSelection = false;
+            this.listViewTasks.Location = new System.Drawing.Point(12, 46);
+            this.listViewTasks.Name = "listViewTasks";
+            this.listViewTasks.Size = new System.Drawing.Size(524, 294);
+            this.listViewTasks.TabIndex = 7;
+            this.listViewTasks.UseCompatibleStateImageBehavior = false;
+            // 
+            // ClmnTaskTitle
+            // 
+            this.ClmnTaskTitle.Text = "Task";
+            // 
+            // ClmnDueDate
+            // 
+            this.ClmnDueDate.Text = "Due Date";
+            // 
+            // ClmnIsCompleted
+            // 
+            this.ClmnIsCompleted.Text = "Status";
             // 
             // TaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 353);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listViewTasks);
             this.Controls.Add(this.iconbtnTasks);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TaskForm";
@@ -76,6 +95,9 @@
         #endregion
 
         private FontAwesome.Sharp.IconButton iconbtnTasks;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewTasks;
+        private System.Windows.Forms.ColumnHeader ClmnTaskTitle;
+        private System.Windows.Forms.ColumnHeader ClmnDueDate;
+        private System.Windows.Forms.ColumnHeader ClmnIsCompleted;
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ToDoList.Interfaces
 {
-    public interface ICrudForm
+    public interface ICRUDForm
     {
-        void AddEntry();
-        void UpdateEntry();
-        void DeleteEntry();
+        void AddTask();
+        void UpdateTask();
+        void DeleteTask();
     }
 }
