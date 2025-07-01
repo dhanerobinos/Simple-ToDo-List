@@ -37,9 +37,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.taskPanel = new System.Windows.Forms.Panel();
             this.btnSaveTask = new FontAwesome.Sharp.IconButton();
-            this.txtTaskTitle = new System.Windows.Forms.TextBox();
+            this.tbTitle = new System.Windows.Forms.TextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.dateTimePickerDueDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
             this.btnAddTasks = new FontAwesome.Sharp.IconButton();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
@@ -149,9 +149,9 @@
             // taskPanel
             // 
             this.taskPanel.Controls.Add(this.btnSaveTask);
-            this.taskPanel.Controls.Add(this.txtTaskTitle);
+            this.taskPanel.Controls.Add(this.tbTitle);
             this.taskPanel.Controls.Add(this.iconButton1);
-            this.taskPanel.Controls.Add(this.dateTimePickerDueDate);
+            this.taskPanel.Controls.Add(this.dtpDueDate);
             this.taskPanel.Location = new System.Drawing.Point(171, 430);
             this.taskPanel.Name = "taskPanel";
             this.taskPanel.Size = new System.Drawing.Size(544, 56);
@@ -170,13 +170,13 @@
             this.btnSaveTask.UseVisualStyleBackColor = true;
             this.btnSaveTask.Click += new System.EventHandler(this.btnSaveTask_Click);
             // 
-            // txtTaskTitle
+            // tbTitle
             // 
-            this.txtTaskTitle.BackColor = System.Drawing.SystemColors.Info;
-            this.txtTaskTitle.Location = new System.Drawing.Point(63, 19);
-            this.txtTaskTitle.Name = "txtTaskTitle";
-            this.txtTaskTitle.Size = new System.Drawing.Size(381, 20);
-            this.txtTaskTitle.TabIndex = 10;
+            this.tbTitle.BackColor = System.Drawing.SystemColors.Info;
+            this.tbTitle.Location = new System.Drawing.Point(63, 19);
+            this.tbTitle.Name = "tbTitle";
+            this.tbTitle.Size = new System.Drawing.Size(381, 20);
+            this.tbTitle.TabIndex = 10;
             // 
             // iconButton1
             // 
@@ -189,15 +189,15 @@
             this.iconButton1.TabIndex = 2;
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
-            // dateTimePickerDueDate
+            // dtpDueDate
             // 
-            this.dateTimePickerDueDate.CalendarForeColor = System.Drawing.SystemColors.Info;
-            this.dateTimePickerDueDate.CalendarMonthBackground = System.Drawing.SystemColors.Info;
-            this.dateTimePickerDueDate.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dateTimePickerDueDate.Location = new System.Drawing.Point(450, 16);
-            this.dateTimePickerDueDate.Name = "dateTimePickerDueDate";
-            this.dateTimePickerDueDate.Size = new System.Drawing.Size(32, 20);
-            this.dateTimePickerDueDate.TabIndex = 1;
+            this.dtpDueDate.CalendarForeColor = System.Drawing.SystemColors.Info;
+            this.dtpDueDate.CalendarMonthBackground = System.Drawing.SystemColors.Info;
+            this.dtpDueDate.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtpDueDate.Location = new System.Drawing.Point(450, 16);
+            this.dtpDueDate.Name = "dtpDueDate";
+            this.dtpDueDate.Size = new System.Drawing.Size(32, 20);
+            this.dtpDueDate.TabIndex = 1;
             // 
             // btnAddTasks
             // 
@@ -287,13 +287,13 @@
         private FontAwesome.Sharp.IconButton iconbtnTasks;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel taskPanel;
-        private System.Windows.Forms.TextBox txtTaskTitle;
+        private System.Windows.Forms.TextBox tbTitle;
         private FontAwesome.Sharp.IconButton btnAddTasks;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.DateTimePicker dateTimePickerDueDate;
+        private System.Windows.Forms.DateTimePicker dtpDueDate;
         private FontAwesome.Sharp.IconButton btnDelete;
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.Panel mainPanel;
         private FontAwesome.Sharp.IconButton btnSaveTask;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

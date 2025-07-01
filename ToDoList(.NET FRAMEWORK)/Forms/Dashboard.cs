@@ -1,9 +1,14 @@
-﻿using System;
+﻿using Services;
+using System;
 
 using System.Windows.Forms;
 using ToDoList.Forms;
 using ToDoList.Interfaces;
-using ToDoList_.NET_FRAMEWORK_.Forms;
+using ToDoList.Models;
+using ToDoList.Forms;
+using ToDoList.Services;
+
+
 
 
 namespace ToDoList
@@ -65,22 +70,21 @@ namespace ToDoList
         }
         private void btnSaveTask_Click(object sender, EventArgs e)
         {
-            /*string title = txtTaskTitle.Text.Trim();
-            DateTime dueDate = dateTimePickerDueDate.Value;
 
-            if (activeForm is ICrudForm crudForm)
+            string title = tbTitle.Text;
+            DateTime dueDate = dtpDueDate.Value;
+
+            if (mainPanel.Controls.Count > 0)
             {
-                if (string.IsNullOrWhiteSpace(title))
+                Control currentForm = mainPanel.Controls[0];
+
+                if (currentForm is IAddableForm<TaskModel> taskForm)
                 {
-                    MessageBox.Show("Please enter a task title.");
-                    return;
+                    var newData = taskForm.GetNewData(title, dueDate);
+                    taskForm.AddData(newData);
                 }
 
-                crudForm.AddItem(title, dueDate);
-                txtTaskTitle.Clear(); // reset after add
             }
-
-            */
         }
     }
 }
