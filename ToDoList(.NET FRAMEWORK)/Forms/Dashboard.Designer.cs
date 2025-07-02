@@ -227,6 +227,7 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // iconButton3
             // 

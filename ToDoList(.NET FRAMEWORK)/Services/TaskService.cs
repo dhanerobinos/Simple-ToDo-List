@@ -30,24 +30,23 @@ namespace Services
 
 
 
-        public static void AddTasks(string TaskTitle, DateTime TaskDueDate, bool TaskIsCompleted)
+        public static void AddTasks(TaskModel task,Users users)
         {
             try
             {
-                using (var connection = new SqlConnection(DbConnection.ConnectionString))
-                {
-                    connection.Open();
-                    string query = "INSERT INTO Task (TaskTitle, TaskDueDate,  TaskIsCompleted) VALUES(@TaskTitle,@TaskDueDate, @TaskIsCompleted)";
-
-                    using (var cmd = new SqlCommand(query, connection))
+                using (var connection = new SqlConnection(DbConnection.ConnectionString)) {
                     {
-                        cmd.Parameters.AddWithValue("@TaskTitle", TaskTitle);
-                        cmd.Parameters.AddWithValue("@DueDate", TaskDueDate);
-                        cmd.Parameters.AddWithValue("@IsCompleted", TaskIsCompleted);
+                        connection.Open();
+                        string query = "INSERT INTO Task (TaskTitle, TaskDueDate, TaskIsCompleted,UserID) VALUES (@TaskTitle, @TaskDueDate, @TaskIsCompleted,@UserID)";
+                       
+                        SqlCommand cmd = new SqlCommand(query, connection);
+                        cmd.Parameters.AddWithValue("@TaskTitle", task.TaskTitle);
+                        cmd.Parameters.AddWithValue("@TaskDueDate", task.TaskDueDate);
+                        cmd.Parameters.AddWithValue("@TaskIsCompleted", task.TaskIsCompleted);
+                        cmd.Parameters.AddWithValue("@UserID", users.UserID);
                         cmd.ExecuteNonQuery();
+
                     }
-
-
                 }
             }
             catch (Exception ex) 
@@ -81,6 +80,30 @@ namespace Services
                 MessageBox.Show(ex.Message);
             }
         }
+
+        public bool DeleteTask(TaskModel task)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(DbConnection.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (var cmd = new SqlCommand("DELETE FROM Task WHERE TaskID = @TaskID", connection))
+                    {
+                        cmd.Parameters.AddWithValue("@TaskID", task.TaskID);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0; // Return true if a row was deleted
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error Deleting Task: {ex.Message}");
+                return false; // Return false if an error occurred
+            }
+        }
+        
 
     }
 }

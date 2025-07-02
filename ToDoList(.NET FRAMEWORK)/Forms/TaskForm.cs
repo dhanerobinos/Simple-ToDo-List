@@ -1,19 +1,26 @@
 ﻿using Services;
-using ToDoList.Services;
+using System;
 using System.Windows.Forms;
+using ToDoList.Interfaces;
+using ToDoList.Models;
+
+using ToDoList.Services;
 
 namespace ToDoList.Forms
 {
-    public partial class TaskForm : Form
+    public partial class TaskForm : Form, IAddableForm<TaskModel>, IDeletableForm<TaskModel>
     {
         private readonly TaskService _taskService = new TaskService();
-        public TaskForm()
+        private Users _currentUser;
+        public TaskForm(Users user)
         {
             InitializeComponent();
             LoadTaskListToListView();
+            _currentUser = user;
+
         }
 
-        private void LoadTaskListToListView()
+        public void LoadTaskListToListView()
         {
             listViewTasks.Items.Clear();
             var tasks = _taskService.GetAllTasks();
@@ -22,20 +29,44 @@ namespace ToDoList.Forms
             listViewTasks.Columns.Clear();
 
            
-            listViewTasks.Columns.Add("Title", 150);       // column 0
-            listViewTasks.Columns.Add("Due Date", 120);    // column 1
-            listViewTasks.Columns.Add("Completed", 100);   // column 2
+            listViewTasks.Columns.Add("Title", 150);       
+            listViewTasks.Columns.Add("Due Date", 120);    
+            listViewTasks.Columns.Add("Completed", 100);   
 
-
-            foreach (var task in tasks)
+            foreach (TaskModel task in tasks)
             {
-                ListViewItem item = new ListViewItem(task.TaskTitle); // main column
-               
-                item.Tag = task.TaskID;
-                item.SubItems.Add(task.TaskDueDate.ToShortDateString());
+                var item = new ListViewItem(task.TaskTitle); 
+                item.SubItems.Add(task.TaskDueDate.ToShortDateString()); 
+                item.SubItems.Add(task.TaskIsCompleted ? "Completed" : "Pending"); 
+
+                item.Tag = task;
                 listViewTasks.Items.Add(item);
-                item.SubItems.Add(task.TaskIsCompleted ? "Yes" : "No");
             }
+
+        }
+
+        public TaskModel GetNewData(string title, DateTime dueDate)
+        {
+            return new TaskModel
+            {
+                TaskTitle = title,
+                TaskDueDate = dueDate,
+                TaskIsCompleted = false
+            };
+        }
+        public void AddData(TaskModel data)
+        {
+            
+            TaskService.AddTasks(data, _currentUser); 
+        }
+        public TaskModel GetSelectedItem()
+        {
+            if (listViewTasks.SelectedItems.Count > 0)
+            {
+                var selectedItem = listViewTasks.SelectedItems[0];
+                return (TaskModel)selectedItem.Tag;
+            }
+            return null;
         }
 
     }
