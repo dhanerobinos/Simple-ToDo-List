@@ -2,14 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using ToDoList.DataAccess;
-using ToDoList.Forms;
 using ToDoList.Forms;
 using ToDoList.Handlers;
 using ToDoList.Interfaces;
 using ToDoList.Models;
-using ToDoList.Services;
-using ToDoList_.NET_FRAMEWORK_.Services;
+
 
 
 
@@ -21,6 +18,7 @@ namespace ToDoList
         private Users _currentUser;
         private readonly TaskService _taskService = new TaskService();
         private List<TaskModel> tasks;
+        private TaskForm _taskForm;
 
         public Dashboard(Users user)
         {
@@ -104,6 +102,37 @@ namespace ToDoList
                 DeleteHandler.HandleDelete(deletableForm, task => _taskService.DeleteTask(task));
                 LoadForm(new TaskForm(_currentUser));
 
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (mainPanel.Controls.Count > 0 && mainPanel.Controls[0] is TaskForm taskForm)
+            {
+                var selectedTask = taskForm.GetSelectedItem();
+                if (selectedTask != null)
+                {
+                    tbEditTask.Text = selectedTask.TaskTitle;
+                    dtpEditDueDate.Value = selectedTask.TaskDueDate;
+
+                    editPanel.Visible = true;
+                }
+            }
+
+        }
+
+        private void btnEditSave_Click(object sender, EventArgs e)
+        {
+            if (mainPanel.Controls[0] is IEditableForm<TaskModel> taskForm)
+            {
+                EditHandler.HandleEditSave(
+                    taskForm,
+                    updatedTask => TaskService.UpdateTasks(updatedTask),
+                    () =>
+                    {
+                        LoadForm(new TaskForm(_currentUser));     // refresh UI
+                        editPanel.Visible = false;    // hide panel
+                    });
             }
         }
     }

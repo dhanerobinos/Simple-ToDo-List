@@ -36,6 +36,11 @@
             this.toDoListAppDBDataSet1 = new ToDoList.ToDoListAppDBDataSet();
             this.panel3 = new System.Windows.Forms.Panel();
             this.taskPanel = new System.Windows.Forms.Panel();
+            this.editPanel = new System.Windows.Forms.Panel();
+            this.btnEditSave = new FontAwesome.Sharp.IconButton();
+            this.tbEditTask = new System.Windows.Forms.TextBox();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.dtpEditDueDate = new System.Windows.Forms.DateTimePicker();
             this.btnSaveTask = new FontAwesome.Sharp.IconButton();
             this.tbTitle = new System.Windows.Forms.TextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -44,9 +49,11 @@
             this.btnDelete = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.btnEdit = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toDoListAppDBDataSet1)).BeginInit();
             this.taskPanel.SuspendLayout();
+            this.editPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -158,6 +165,59 @@
             this.taskPanel.TabIndex = 9;
             this.taskPanel.Visible = false;
             // 
+            // editPanel
+            // 
+            this.editPanel.Controls.Add(this.btnEditSave);
+            this.editPanel.Controls.Add(this.tbEditTask);
+            this.editPanel.Controls.Add(this.iconButton4);
+            this.editPanel.Controls.Add(this.dtpEditDueDate);
+            this.editPanel.Location = new System.Drawing.Point(171, 430);
+            this.editPanel.Name = "editPanel";
+            this.editPanel.Size = new System.Drawing.Size(544, 56);
+            this.editPanel.TabIndex = 12;
+            this.editPanel.Visible = false;
+            // 
+            // btnEditSave
+            // 
+            this.btnEditSave.IconChar = FontAwesome.Sharp.IconChar.Pencil;
+            this.btnEditSave.IconColor = System.Drawing.Color.Black;
+            this.btnEditSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditSave.Location = new System.Drawing.Point(3, 0);
+            this.btnEditSave.Name = "btnEditSave";
+            this.btnEditSave.Size = new System.Drawing.Size(55, 53);
+            this.btnEditSave.TabIndex = 11;
+            this.btnEditSave.UseVisualStyleBackColor = true;
+            this.btnEditSave.Click += new System.EventHandler(this.btnEditSave_Click);
+            // 
+            // tbEditTask
+            // 
+            this.tbEditTask.BackColor = System.Drawing.SystemColors.Info;
+            this.tbEditTask.Location = new System.Drawing.Point(63, 19);
+            this.tbEditTask.Name = "tbEditTask";
+            this.tbEditTask.Size = new System.Drawing.Size(381, 20);
+            this.tbEditTask.TabIndex = 10;
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
+            this.iconButton4.IconColor = System.Drawing.Color.Black;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.Location = new System.Drawing.Point(488, 6);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(43, 44);
+            this.iconButton4.TabIndex = 2;
+            this.iconButton4.UseVisualStyleBackColor = true;
+            // 
+            // dtpEditDueDate
+            // 
+            this.dtpEditDueDate.CalendarForeColor = System.Drawing.SystemColors.Info;
+            this.dtpEditDueDate.CalendarMonthBackground = System.Drawing.SystemColors.Info;
+            this.dtpEditDueDate.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtpEditDueDate.Location = new System.Drawing.Point(450, 16);
+            this.dtpEditDueDate.Name = "dtpEditDueDate";
+            this.dtpEditDueDate.Size = new System.Drawing.Size(32, 20);
+            this.dtpEditDueDate.TabIndex = 1;
+            // 
             // btnSaveTask
             // 
             this.btnSaveTask.IconChar = FontAwesome.Sharp.IconChar.Check;
@@ -220,9 +280,9 @@
             this.btnDelete.IconColor = System.Drawing.Color.Black;
             this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDelete.IconSize = 20;
-            this.btnDelete.Location = new System.Drawing.Point(616, 34);
+            this.btnDelete.Location = new System.Drawing.Point(631, 34);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(99, 34);
+            this.btnDelete.Size = new System.Drawing.Size(84, 34);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -238,9 +298,9 @@
             this.iconButton3.IconColor = System.Drawing.Color.Black;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 30;
-            this.iconButton3.Location = new System.Drawing.Point(508, 32);
+            this.iconButton3.Location = new System.Drawing.Point(438, 36);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(117, 33);
+            this.iconButton3.Size = new System.Drawing.Size(118, 33);
             this.iconButton3.TabIndex = 10;
             this.iconButton3.Text = "Complete";
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -253,11 +313,32 @@
             this.mainPanel.Size = new System.Drawing.Size(548, 353);
             this.mainPanel.TabIndex = 2;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnEdit.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btnEdit.IconColor = System.Drawing.Color.Black;
+            this.btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEdit.IconSize = 30;
+            this.btnEdit.Location = new System.Drawing.Point(553, 35);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(72, 32);
+            this.btnEdit.TabIndex = 11;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 498);
+            this.Controls.Add(this.editPanel);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.btnAddTasks);
             this.Controls.Add(this.btnDelete);
@@ -274,6 +355,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.toDoListAppDBDataSet1)).EndInit();
             this.taskPanel.ResumeLayout(false);
             this.taskPanel.PerformLayout();
+            this.editPanel.ResumeLayout(false);
+            this.editPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -295,6 +378,12 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.Panel mainPanel;
         private FontAwesome.Sharp.IconButton btnSaveTask;
+        private FontAwesome.Sharp.IconButton btnEdit;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Panel editPanel;
+        private FontAwesome.Sharp.IconButton btnEditSave;
+        private System.Windows.Forms.TextBox tbEditTask;
+        private FontAwesome.Sharp.IconButton iconButton4;
+        private System.Windows.Forms.DateTimePicker dtpEditDueDate;
     }
 }

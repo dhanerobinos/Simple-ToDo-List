@@ -11,6 +11,8 @@ namespace ToDoList.Forms
     public partial class TaskForm : Form, IAddableForm<TaskModel>, IDeletableForm<TaskModel>
     {
         private readonly TaskService _taskService = new TaskService();
+        private TaskModel _taskToEdit;
+
         private Users _currentUser;
         public TaskForm(Users user)
         {
@@ -59,6 +61,7 @@ namespace ToDoList.Forms
             
             TaskService.AddTasks(data, _currentUser); 
         }
+       
         public TaskModel GetSelectedItem()
         {
             if (listViewTasks.SelectedItems.Count > 0)

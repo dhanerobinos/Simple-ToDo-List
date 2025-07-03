@@ -55,20 +55,21 @@ namespace Services
             }
         }
 
-        public static void UpdateTasks(string TaskTitle, DateTime TaskDueDate, bool TaskIsCompleted)
+        public static void UpdateTasks(TaskModel task)
         {
             try
             {
                 using (var connection = new SqlConnection(DbConnection.ConnectionString))
                 {
                     connection.Open();
-                    string query = "UPDATE Task  SET @TaskTitle =TaskTitle, @TaskDueDate = TaskDueDate, @TaskIsCompleted = TaskIsCompleted";
+                    string query = "UPDATE Task SET TaskTitle = @TaskTitle, TaskDueDate = @TaskDueDate, TaskIsCompleted = @TaskIsCompleted  WHERE TaskID = @TaskID;";
 
                     using (var cmd = new SqlCommand(query, connection))
                     {
-                        cmd.Parameters.AddWithValue("@TaskTitle", TaskTitle);
-                        cmd.Parameters.AddWithValue("@DueDate", TaskDueDate);
-                        cmd.Parameters.AddWithValue("@IsCompleted", TaskIsCompleted);
+                        cmd.Parameters.AddWithValue("@TaskTitle", task.TaskTitle);
+                        cmd.Parameters.AddWithValue("@TaskDueDate", task.TaskDueDate);
+                        cmd.Parameters.AddWithValue("@TaskIsCompleted", task.TaskIsCompleted);
+                        cmd.Parameters.AddWithValue("@TaskID", task.TaskID);
                         cmd.ExecuteNonQuery();
                     }
 
