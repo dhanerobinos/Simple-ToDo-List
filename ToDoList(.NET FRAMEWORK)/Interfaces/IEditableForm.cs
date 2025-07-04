@@ -10,6 +10,6 @@ namespace ToDoList.Interfaces
     public interface IEditableForm<T>
     {
         void LoadData(T data);         // to fill the form
-        T GetEditedData();
+        T GetEditedData(string title, DateTime dueDate);
     }
 }

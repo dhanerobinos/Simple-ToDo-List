@@ -19,6 +19,8 @@ namespace ToDoList
         private readonly TaskService _taskService = new TaskService();
         private List<TaskModel> tasks;
         private TaskForm _taskForm;
+        private TaskModel _selectedTask;
+
 
         public Dashboard(Users user)
         {
@@ -109,12 +111,13 @@ namespace ToDoList
         {
             if (mainPanel.Controls.Count > 0 && mainPanel.Controls[0] is TaskForm taskForm)
             {
-                var selectedTask = taskForm.GetSelectedItem();
-                if (selectedTask != null)
+                _selectedTask = taskForm.GetSelectedItem();
+                if (_selectedTask != null)
                 {
-                    tbEditTask.Text = selectedTask.TaskTitle;
-                    dtpEditDueDate.Value = selectedTask.TaskDueDate;
+                    tbEditTask.Text = _selectedTask.TaskTitle;
+                    dtpEditDueDate.Value = _selectedTask.TaskDueDate;
 
+                    taskForm.LoadData(_selectedTask);  // ✅ VERY IMPORTANT
                     editPanel.Visible = true;
                 }
             }
@@ -123,16 +126,22 @@ namespace ToDoList
 
         private void btnEditSave_Click(object sender, EventArgs e)
         {
-            if (mainPanel.Controls[0] is IEditableForm<TaskModel> taskForm)
+            string title = tbEditTask.Text;
+            DateTime dueDate = dtpEditDueDate.Value;
+
+            if (mainPanel.Controls.Count > 0)
             {
-                EditHandler.HandleEditSave(
-                    taskForm,
-                    updatedTask => TaskService.UpdateTasks(updatedTask),
-                    () =>
+                Control currentForm = mainPanel.Controls[0];
+
+                if (currentForm is IEditableForm<TaskModel> taskForm)
+                {
+                    EditHandler.HandleEditSave(taskForm, title, dueDate, task =>
                     {
-                        LoadForm(new TaskForm(_currentUser));     // refresh UI
-                        editPanel.Visible = false;    // hide panel
+                        TaskService.UpdateTasks(task, _currentUser);
                     });
+
+                    LoadForm(new TaskForm(_currentUser));
+                }
             }
         }
     }

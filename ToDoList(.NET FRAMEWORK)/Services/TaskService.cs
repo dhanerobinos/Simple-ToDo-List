@@ -55,30 +55,21 @@ namespace Services
             }
         }
 
-        public static void UpdateTasks(TaskModel task)
+        public static void UpdateTasks(TaskModel task, Users currentUser)
         {
-            try
+            using (SqlConnection connection = new SqlConnection(DbConnection.ConnectionString))
             {
-                using (var connection = new SqlConnection(DbConnection.ConnectionString))
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand("UPDATE Task SET TaskTitle = @TaskTitle, TaskDueDate = @TaskDueDate WHERE TaskID = @TaskID AND UserID = @UserID", connection))
                 {
-                    connection.Open();
-                    string query = "UPDATE Task SET TaskTitle = @TaskTitle, TaskDueDate = @TaskDueDate, TaskIsCompleted = @TaskIsCompleted  WHERE TaskID = @TaskID;";
+                    cmd.Parameters.AddWithValue("@TaskID", task.TaskID);
+                    cmd.Parameters.AddWithValue("@TaskTitle", task.TaskTitle);
+                    cmd.Parameters.AddWithValue("@TaskDueDate", task.TaskDueDate);
+                    cmd.Parameters.AddWithValue("@UserID", currentUser.UserID);
 
-                    using (var cmd = new SqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@TaskTitle", task.TaskTitle);
-                        cmd.Parameters.AddWithValue("@TaskDueDate", task.TaskDueDate);
-                        cmd.Parameters.AddWithValue("@TaskIsCompleted", task.TaskIsCompleted);
-                        cmd.Parameters.AddWithValue("@TaskID", task.TaskID);
-                        cmd.ExecuteNonQuery();
-                    }
-
-
+                    cmd.ExecuteNonQuery();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
 
