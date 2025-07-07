@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.iconbtnMyday = new FontAwesome.Sharp.IconButton();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.MyDayListView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // iconbtnMyday
@@ -49,15 +49,16 @@
             this.iconbtnMyday.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconbtnMyday.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // MyDayListView
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.Control;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 46);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(524, 294);
-            this.listView1.TabIndex = 8;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.MyDayListView.BackColor = System.Drawing.SystemColors.Control;
+            this.MyDayListView.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MyDayListView.HideSelection = false;
+            this.MyDayListView.Location = new System.Drawing.Point(12, 46);
+            this.MyDayListView.Name = "MyDayListView";
+            this.MyDayListView.Size = new System.Drawing.Size(524, 294);
+            this.MyDayListView.TabIndex = 8;
+            this.MyDayListView.UseCompatibleStateImageBehavior = false;
             // 
             // MyDayForm
             // 
@@ -65,7 +66,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 353);
             this.Controls.Add(this.iconbtnMyday);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.MyDayListView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MyDayForm";
             this.Text = "MyDayForm";
@@ -75,6 +76,6 @@
 
         #endregion
         private FontAwesome.Sharp.IconButton iconbtnMyday;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView MyDayListView;
     }
 }

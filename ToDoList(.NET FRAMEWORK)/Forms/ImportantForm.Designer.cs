@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.iconbtnImportant = new FontAwesome.Sharp.IconButton();
-            this.listImportant = new System.Windows.Forms.ListView();
+            this.ImportantTaskListView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // iconbtnImportant
@@ -49,15 +49,16 @@
             this.iconbtnImportant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconbtnImportant.UseVisualStyleBackColor = true;
             // 
-            // listImportant
+            // ImportantTaskListView
             // 
-            this.listImportant.BackColor = System.Drawing.SystemColors.Control;
-            this.listImportant.HideSelection = false;
-            this.listImportant.Location = new System.Drawing.Point(12, 46);
-            this.listImportant.Name = "listImportant";
-            this.listImportant.Size = new System.Drawing.Size(524, 294);
-            this.listImportant.TabIndex = 0;
-            this.listImportant.UseCompatibleStateImageBehavior = false;
+            this.ImportantTaskListView.BackColor = System.Drawing.SystemColors.Control;
+            this.ImportantTaskListView.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ImportantTaskListView.HideSelection = false;
+            this.ImportantTaskListView.Location = new System.Drawing.Point(12, 46);
+            this.ImportantTaskListView.Name = "ImportantTaskListView";
+            this.ImportantTaskListView.Size = new System.Drawing.Size(524, 294);
+            this.ImportantTaskListView.TabIndex = 0;
+            this.ImportantTaskListView.UseCompatibleStateImageBehavior = false;
             // 
             // ImportantForm
             // 
@@ -65,7 +66,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 353);
             this.Controls.Add(this.iconbtnImportant);
-            this.Controls.Add(this.listImportant);
+            this.Controls.Add(this.ImportantTaskListView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ImportantForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -77,6 +78,6 @@
 
         #endregion
         private FontAwesome.Sharp.IconButton iconbtnImportant;
-        private System.Windows.Forms.ListView listImportant;
+        private System.Windows.Forms.ListView ImportantTaskListView;
     }
 }

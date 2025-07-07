@@ -21,7 +21,7 @@ namespace ToDoList.Handlers
                 try
                 {
                     deleteAction(DeleteItem);
-                    MessageBox.Show("Item deleted successfully.", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   // MessageBox.Show("Item deleted successfully.", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {

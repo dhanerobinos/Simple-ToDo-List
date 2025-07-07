@@ -28,138 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.iconbtnTasks = new FontAwesome.Sharp.IconButton();
-            this.iconbtnMyday = new FontAwesome.Sharp.IconButton();
-            this.icnbtnPlanned = new FontAwesome.Sharp.IconButton();
-            this.iconbtnImportant = new FontAwesome.Sharp.IconButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.toDoListAppDBDataSet1 = new ToDoList.ToDoListAppDBDataSet();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.taskPanel = new System.Windows.Forms.Panel();
             this.editPanel = new System.Windows.Forms.Panel();
             this.btnEditSave = new FontAwesome.Sharp.IconButton();
             this.tbEditTask = new System.Windows.Forms.TextBox();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.dtpEditDueDate = new System.Windows.Forms.DateTimePicker();
             this.btnSaveTask = new FontAwesome.Sharp.IconButton();
             this.tbTitle = new System.Windows.Forms.TextBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
             this.btnAddTasks = new FontAwesome.Sharp.IconButton();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.btnComplete = new FontAwesome.Sharp.IconButton();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.btnEdit = new FontAwesome.Sharp.IconButton();
-            this.panel1.SuspendLayout();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.icnbtnPlanned = new FontAwesome.Sharp.IconButton();
+            this.iconbtnMyday = new FontAwesome.Sharp.IconButton();
+            this.iconbtnImportant = new FontAwesome.Sharp.IconButton();
+            this.iconbtnTasks = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.toDoListAppDBDataSet1)).BeginInit();
             this.taskPanel.SuspendLayout();
             this.editPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.iconbtnTasks);
-            this.panel1.Controls.Add(this.iconbtnMyday);
-            this.panel1.Controls.Add(this.icnbtnPlanned);
-            this.panel1.Controls.Add(this.iconbtnImportant);
-            this.panel1.Location = new System.Drawing.Point(1, 26);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 473);
-            this.panel1.TabIndex = 0;
-            // 
-            // iconbtnTasks
-            // 
-            this.iconbtnTasks.FlatAppearance.BorderSize = 0;
-            this.iconbtnTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconbtnTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconbtnTasks.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.iconbtnTasks.IconColor = System.Drawing.Color.Black;
-            this.iconbtnTasks.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconbtnTasks.IconSize = 30;
-            this.iconbtnTasks.Location = new System.Drawing.Point(-17, 196);
-            this.iconbtnTasks.Name = "iconbtnTasks";
-            this.iconbtnTasks.Size = new System.Drawing.Size(177, 52);
-            this.iconbtnTasks.TabIndex = 5;
-            this.iconbtnTasks.Text = "Tasks";
-            this.iconbtnTasks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconbtnTasks.UseVisualStyleBackColor = true;
-            this.iconbtnTasks.Click += new System.EventHandler(this.iconbtnTasks_Click);
-            // 
-            // iconbtnMyday
-            // 
-            this.iconbtnMyday.FlatAppearance.BorderSize = 0;
-            this.iconbtnMyday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconbtnMyday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconbtnMyday.IconChar = FontAwesome.Sharp.IconChar.Sun;
-            this.iconbtnMyday.IconColor = System.Drawing.Color.Black;
-            this.iconbtnMyday.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconbtnMyday.IconSize = 30;
-            this.iconbtnMyday.Location = new System.Drawing.Point(-17, 53);
-            this.iconbtnMyday.Name = "iconbtnMyday";
-            this.iconbtnMyday.Size = new System.Drawing.Size(177, 52);
-            this.iconbtnMyday.TabIndex = 4;
-            this.iconbtnMyday.Text = "My Day";
-            this.iconbtnMyday.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconbtnMyday.UseVisualStyleBackColor = true;
-            this.iconbtnMyday.Click += new System.EventHandler(this.iconbtnMyday_Click);
-            // 
-            // icnbtnPlanned
-            // 
-            this.icnbtnPlanned.FlatAppearance.BorderSize = 0;
-            this.icnbtnPlanned.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.icnbtnPlanned.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.icnbtnPlanned.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
-            this.icnbtnPlanned.IconColor = System.Drawing.Color.Black;
-            this.icnbtnPlanned.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.icnbtnPlanned.IconSize = 30;
-            this.icnbtnPlanned.Location = new System.Drawing.Point(-17, 149);
-            this.icnbtnPlanned.Name = "icnbtnPlanned";
-            this.icnbtnPlanned.Size = new System.Drawing.Size(177, 52);
-            this.icnbtnPlanned.TabIndex = 3;
-            this.icnbtnPlanned.Text = "Planned";
-            this.icnbtnPlanned.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.icnbtnPlanned.UseVisualStyleBackColor = true;
-            this.icnbtnPlanned.Click += new System.EventHandler(this.icnbtnPlanned_Click);
-            // 
-            // iconbtnImportant
-            // 
-            this.iconbtnImportant.FlatAppearance.BorderSize = 0;
-            this.iconbtnImportant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconbtnImportant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconbtnImportant.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.iconbtnImportant.IconColor = System.Drawing.Color.Black;
-            this.iconbtnImportant.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconbtnImportant.IconSize = 30;
-            this.iconbtnImportant.Location = new System.Drawing.Point(-17, 102);
-            this.iconbtnImportant.Name = "iconbtnImportant";
-            this.iconbtnImportant.Size = new System.Drawing.Size(177, 52);
-            this.iconbtnImportant.TabIndex = 2;
-            this.iconbtnImportant.Text = "Important";
-            this.iconbtnImportant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconbtnImportant.UseVisualStyleBackColor = true;
-            this.iconbtnImportant.Click += new System.EventHandler(this.iconbtnImportant_Click);
             // 
             // toDoListAppDBDataSet1
             // 
             this.toDoListAppDBDataSet1.DataSetName = "ToDoListAppDBDataSet";
             this.toDoListAppDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel3.Location = new System.Drawing.Point(1, -3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(716, 33);
-            this.panel3.TabIndex = 3;
-            // 
             // taskPanel
             // 
+            this.taskPanel.Controls.Add(this.editPanel);
             this.taskPanel.Controls.Add(this.btnSaveTask);
             this.taskPanel.Controls.Add(this.tbTitle);
-            this.taskPanel.Controls.Add(this.iconButton1);
             this.taskPanel.Controls.Add(this.dtpDueDate);
-            this.taskPanel.Location = new System.Drawing.Point(171, 430);
+            this.taskPanel.Location = new System.Drawing.Point(167, 431);
             this.taskPanel.Name = "taskPanel";
             this.taskPanel.Size = new System.Drawing.Size(544, 56);
             this.taskPanel.TabIndex = 9;
@@ -169,9 +79,8 @@
             // 
             this.editPanel.Controls.Add(this.btnEditSave);
             this.editPanel.Controls.Add(this.tbEditTask);
-            this.editPanel.Controls.Add(this.iconButton4);
             this.editPanel.Controls.Add(this.dtpEditDueDate);
-            this.editPanel.Location = new System.Drawing.Point(171, 430);
+            this.editPanel.Location = new System.Drawing.Point(2, 0);
             this.editPanel.Name = "editPanel";
             this.editPanel.Size = new System.Drawing.Size(544, 56);
             this.editPanel.TabIndex = 12;
@@ -191,29 +100,18 @@
             // 
             // tbEditTask
             // 
-            this.tbEditTask.BackColor = System.Drawing.SystemColors.Info;
+            this.tbEditTask.BackColor = System.Drawing.SystemColors.Control;
             this.tbEditTask.Location = new System.Drawing.Point(63, 19);
             this.tbEditTask.Name = "tbEditTask";
-            this.tbEditTask.Size = new System.Drawing.Size(381, 20);
+            this.tbEditTask.Size = new System.Drawing.Size(433, 20);
             this.tbEditTask.TabIndex = 10;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(488, 6);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(43, 44);
-            this.iconButton4.TabIndex = 2;
-            this.iconButton4.UseVisualStyleBackColor = true;
             // 
             // dtpEditDueDate
             // 
             this.dtpEditDueDate.CalendarForeColor = System.Drawing.SystemColors.Info;
             this.dtpEditDueDate.CalendarMonthBackground = System.Drawing.SystemColors.Info;
             this.dtpEditDueDate.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtpEditDueDate.Location = new System.Drawing.Point(450, 16);
+            this.dtpEditDueDate.Location = new System.Drawing.Point(502, 19);
             this.dtpEditDueDate.Name = "dtpEditDueDate";
             this.dtpEditDueDate.Size = new System.Drawing.Size(32, 20);
             this.dtpEditDueDate.TabIndex = 1;
@@ -232,29 +130,18 @@
             // 
             // tbTitle
             // 
-            this.tbTitle.BackColor = System.Drawing.SystemColors.Info;
+            this.tbTitle.BackColor = System.Drawing.SystemColors.Control;
             this.tbTitle.Location = new System.Drawing.Point(63, 19);
             this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(381, 20);
+            this.tbTitle.Size = new System.Drawing.Size(433, 20);
             this.tbTitle.TabIndex = 10;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(488, 6);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(43, 44);
-            this.iconButton1.TabIndex = 2;
-            this.iconButton1.UseVisualStyleBackColor = true;
             // 
             // dtpDueDate
             // 
             this.dtpDueDate.CalendarForeColor = System.Drawing.SystemColors.Info;
             this.dtpDueDate.CalendarMonthBackground = System.Drawing.SystemColors.Info;
             this.dtpDueDate.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtpDueDate.Location = new System.Drawing.Point(450, 16);
+            this.dtpDueDate.Location = new System.Drawing.Point(502, 19);
             this.dtpDueDate.Name = "dtpDueDate";
             this.dtpDueDate.Size = new System.Drawing.Size(32, 20);
             this.dtpDueDate.TabIndex = 1;
@@ -264,7 +151,7 @@
             this.btnAddTasks.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnAddTasks.IconColor = System.Drawing.Color.Black;
             this.btnAddTasks.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAddTasks.Location = new System.Drawing.Point(171, 430);
+            this.btnAddTasks.Location = new System.Drawing.Point(167, 431);
             this.btnAddTasks.Name = "btnAddTasks";
             this.btnAddTasks.Size = new System.Drawing.Size(55, 53);
             this.btnAddTasks.TabIndex = 9;
@@ -280,7 +167,7 @@
             this.btnDelete.IconColor = System.Drawing.Color.Black;
             this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDelete.IconSize = 20;
-            this.btnDelete.Location = new System.Drawing.Point(631, 34);
+            this.btnDelete.Location = new System.Drawing.Point(625, 22);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(84, 34);
             this.btnDelete.TabIndex = 6;
@@ -289,26 +176,27 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // iconButton3
+            // btnComplete
             // 
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 30;
-            this.iconButton3.Location = new System.Drawing.Point(438, 36);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(118, 33);
-            this.iconButton3.TabIndex = 10;
-            this.iconButton3.Text = "Complete";
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.btnComplete.FlatAppearance.BorderSize = 0;
+            this.btnComplete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComplete.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnComplete.IconColor = System.Drawing.Color.Black;
+            this.btnComplete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnComplete.IconSize = 30;
+            this.btnComplete.Location = new System.Drawing.Point(432, 24);
+            this.btnComplete.Name = "btnComplete";
+            this.btnComplete.Size = new System.Drawing.Size(118, 33);
+            this.btnComplete.TabIndex = 10;
+            this.btnComplete.Text = "Complete";
+            this.btnComplete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnComplete.UseVisualStyleBackColor = true;
+            this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
             // 
             // mainPanel
             // 
-            this.mainPanel.Location = new System.Drawing.Point(157, 71);
+            this.mainPanel.Location = new System.Drawing.Point(165, 62);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(548, 353);
             this.mainPanel.TabIndex = 2;
@@ -323,7 +211,7 @@
             this.btnEdit.IconColor = System.Drawing.Color.Black;
             this.btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEdit.IconSize = 30;
-            this.btnEdit.Location = new System.Drawing.Point(553, 35);
+            this.btnEdit.Location = new System.Drawing.Point(547, 23);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(72, 32);
             this.btnEdit.TabIndex = 11;
@@ -332,18 +220,126 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(-16, 490);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(766, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // icnbtnPlanned
+            // 
+            this.icnbtnPlanned.FlatAppearance.BorderSize = 0;
+            this.icnbtnPlanned.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icnbtnPlanned.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.icnbtnPlanned.ForeColor = System.Drawing.Color.White;
+            this.icnbtnPlanned.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
+            this.icnbtnPlanned.IconColor = System.Drawing.Color.White;
+            this.icnbtnPlanned.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnbtnPlanned.IconSize = 30;
+            this.icnbtnPlanned.Location = new System.Drawing.Point(0, 237);
+            this.icnbtnPlanned.Name = "icnbtnPlanned";
+            this.icnbtnPlanned.Size = new System.Drawing.Size(177, 52);
+            this.icnbtnPlanned.TabIndex = 3;
+            this.icnbtnPlanned.Text = "Planned";
+            this.icnbtnPlanned.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.icnbtnPlanned.UseVisualStyleBackColor = true;
+            this.icnbtnPlanned.Click += new System.EventHandler(this.icnbtnPlanned_Click);
+            // 
+            // iconbtnMyday
+            // 
+            this.iconbtnMyday.FlatAppearance.BorderSize = 0;
+            this.iconbtnMyday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconbtnMyday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconbtnMyday.ForeColor = System.Drawing.Color.White;
+            this.iconbtnMyday.IconChar = FontAwesome.Sharp.IconChar.Sun;
+            this.iconbtnMyday.IconColor = System.Drawing.Color.White;
+            this.iconbtnMyday.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconbtnMyday.IconSize = 30;
+            this.iconbtnMyday.Location = new System.Drawing.Point(0, 141);
+            this.iconbtnMyday.Name = "iconbtnMyday";
+            this.iconbtnMyday.Size = new System.Drawing.Size(177, 52);
+            this.iconbtnMyday.TabIndex = 4;
+            this.iconbtnMyday.Text = "My Day";
+            this.iconbtnMyday.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconbtnMyday.UseVisualStyleBackColor = true;
+            this.iconbtnMyday.Click += new System.EventHandler(this.iconbtnMyday_Click);
+            // 
+            // iconbtnImportant
+            // 
+            this.iconbtnImportant.FlatAppearance.BorderSize = 0;
+            this.iconbtnImportant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconbtnImportant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconbtnImportant.ForeColor = System.Drawing.Color.White;
+            this.iconbtnImportant.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.iconbtnImportant.IconColor = System.Drawing.Color.White;
+            this.iconbtnImportant.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconbtnImportant.IconSize = 30;
+            this.iconbtnImportant.Location = new System.Drawing.Point(0, 190);
+            this.iconbtnImportant.Name = "iconbtnImportant";
+            this.iconbtnImportant.Size = new System.Drawing.Size(177, 52);
+            this.iconbtnImportant.TabIndex = 2;
+            this.iconbtnImportant.Text = "Important";
+            this.iconbtnImportant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconbtnImportant.UseVisualStyleBackColor = true;
+            this.iconbtnImportant.Click += new System.EventHandler(this.iconbtnImportant_Click);
+            // 
+            // iconbtnTasks
+            // 
+            this.iconbtnTasks.FlatAppearance.BorderSize = 0;
+            this.iconbtnTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconbtnTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconbtnTasks.ForeColor = System.Drawing.Color.White;
+            this.iconbtnTasks.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.iconbtnTasks.IconColor = System.Drawing.Color.White;
+            this.iconbtnTasks.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconbtnTasks.IconSize = 30;
+            this.iconbtnTasks.Location = new System.Drawing.Point(0, 284);
+            this.iconbtnTasks.Name = "iconbtnTasks";
+            this.iconbtnTasks.Size = new System.Drawing.Size(177, 52);
+            this.iconbtnTasks.TabIndex = 5;
+            this.iconbtnTasks.Text = "Tasks";
+            this.iconbtnTasks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconbtnTasks.UseVisualStyleBackColor = true;
+            this.iconbtnTasks.Click += new System.EventHandler(this.iconbtnTasks_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(26, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.iconbtnTasks);
+            this.panel1.Controls.Add(this.iconbtnMyday);
+            this.panel1.Controls.Add(this.icnbtnPlanned);
+            this.panel1.Controls.Add(this.iconbtnImportant);
+            this.panel1.Location = new System.Drawing.Point(-2, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(160, 494);
+            this.panel1.TabIndex = 0;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 498);
-            this.Controls.Add(this.editPanel);
+            this.ClientSize = new System.Drawing.Size(748, 541);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.iconButton3);
+            this.Controls.Add(this.btnComplete);
             this.Controls.Add(this.btnAddTasks);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.taskPanel);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -351,39 +347,39 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.TransparencyKey = System.Drawing.Color.White;
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toDoListAppDBDataSet1)).EndInit();
             this.taskPanel.ResumeLayout(false);
             this.taskPanel.PerformLayout();
             this.editPanel.ResumeLayout(false);
             this.editPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private ToDoListAppDBDataSet toDoListAppDBDataSet1;
-        private FontAwesome.Sharp.IconButton iconbtnImportant;
-        private FontAwesome.Sharp.IconButton iconbtnMyday;
-        private FontAwesome.Sharp.IconButton icnbtnPlanned;
-        private FontAwesome.Sharp.IconButton iconbtnTasks;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel taskPanel;
         private System.Windows.Forms.TextBox tbTitle;
         private FontAwesome.Sharp.IconButton btnAddTasks;
         private System.Windows.Forms.DateTimePicker dtpDueDate;
         private FontAwesome.Sharp.IconButton btnDelete;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton btnComplete;
         private System.Windows.Forms.Panel mainPanel;
         private FontAwesome.Sharp.IconButton btnSaveTask;
         private FontAwesome.Sharp.IconButton btnEdit;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Panel editPanel;
         private FontAwesome.Sharp.IconButton btnEditSave;
         private System.Windows.Forms.TextBox tbEditTask;
-        private FontAwesome.Sharp.IconButton iconButton4;
         private System.Windows.Forms.DateTimePicker dtpEditDueDate;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private FontAwesome.Sharp.IconButton icnbtnPlanned;
+        private FontAwesome.Sharp.IconButton iconbtnMyday;
+        private FontAwesome.Sharp.IconButton iconbtnImportant;
+        private FontAwesome.Sharp.IconButton iconbtnTasks;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

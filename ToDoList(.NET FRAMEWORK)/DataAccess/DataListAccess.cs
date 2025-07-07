@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ToDoList.DataAcess;
-
 namespace ToDoList.DataAccess
+
 {
-    public static class DataAccess
+    public static class DataListAccess
     {
         
 

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ToDoList.Services
 {
     public class PasswordService
     {
-
         public string HashPassword(string password)
         {
             using (SHA256 sha256Hash = SHA256.Create())
@@ -22,10 +17,7 @@ namespace ToDoList.Services
                     builder.Append(bytes[i].ToString("x2"));
                 }
                 return builder.ToString();
-
             }
-
-
         }
     }
 }

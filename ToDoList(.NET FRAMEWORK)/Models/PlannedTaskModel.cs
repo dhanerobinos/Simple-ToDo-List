@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ToDoList_.NET_FRAMEWORK_.Models
+namespace ToDoList.Models
 {
     public class PlannedTaskModel
     {
         public int PlannedTaskID { get; set; }
         public string PlannedTaskTitle { get; set; }
-        public DateTimePicker PlannedTaskDueDate { get; set; }
+        public DateTime PlannedTaskDueDate { get; set; }
         public bool PlannedTaskIsCompleted { get; set; }
+        public int UserID { get; set; }
     }
 }

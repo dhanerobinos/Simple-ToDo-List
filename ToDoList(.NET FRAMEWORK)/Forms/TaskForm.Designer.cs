@@ -52,19 +52,16 @@
             // listViewTasks
             // 
             this.listViewTasks.AccessibleRole = System.Windows.Forms.AccessibleRole.Table;
-            this.listViewTasks.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.listViewTasks.BackColor = System.Drawing.SystemColors.Control;
             this.listViewTasks.BackgroundImageTiled = true;
-            this.listViewTasks.CheckBoxes = true;
             this.listViewTasks.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewTasks.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.listViewTasks.FullRowSelect = true;
-            this.listViewTasks.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewTasks.HideSelection = false;
             this.listViewTasks.Location = new System.Drawing.Point(12, 46);
             this.listViewTasks.Name = "listViewTasks";
             this.listViewTasks.Size = new System.Drawing.Size(524, 294);
             this.listViewTasks.TabIndex = 7;
-            this.listViewTasks.UseCompatibleStateImageBehavior = false;
             // 
             // TaskForm
             // 

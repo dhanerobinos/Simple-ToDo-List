@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace ToDoList.Interfaces
 {
-    public interface ICRUDForm
+    public interface ICompletableForm<T>
     {
-        void AddTask();
-        void UpdateTask();
-        void DeleteTask();
+        T GetSelectedItem();
+        void MarkAsCompleted(T task);
     }
 }

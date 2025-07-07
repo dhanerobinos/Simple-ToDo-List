@@ -1,9 +1,8 @@
 ﻿using System;
-using ToDoList.Services;
 using System.Windows.Forms;
-using System.Drawing;
-using ToDoList.Forms;
 using ToDoList.LoginAndRegister;
+using ToDoList.Models;
+using ToDoList.Services;
 
 namespace ToDoList.Forms
 {
@@ -16,7 +15,6 @@ namespace ToDoList.Forms
             _authService = new AuthService();
 
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = tbUsername.Text;
@@ -25,24 +23,32 @@ namespace ToDoList.Forms
             if (username == "" || password == "")
             {
                 MessageBox.Show("Username and Password cannot be empty.");
-               
-            }
-            else if (_authService.ValidateLogin(username, password))
-            {
-                this.Hide();
-                Dashboard dashboard = new Dashboard();
-                dashboard.Show();
             }
             else
             {
-                MessageBox.Show("Invalid Username or Password.");
+                Users users = _authService.ValidateLogin(username, password);
+                if (users != null)
+                {
+                    var dashboard = new Dashboard(users);
+                    this.Hide();
+                    dashboard.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password.");
+                }
             }
-
         }
-
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             tbPassword.UseSystemPasswordChar = !cbShowPassword.Checked;
+        }
+
+        private void linkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+             this.Hide();
+            ForgotPasswordForm forgotPassForm = new ForgotPasswordForm();
+            forgotPassForm.Show();
         }
 
         private void btnCreatAcc_Click(object sender, EventArgs e)
@@ -50,13 +56,6 @@ namespace ToDoList.Forms
             this.Hide();
             SignupForm signupForm = new SignupForm();
             signupForm.Show();
-        }
-
-        private void linkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            ForgotPasswordForm forgotPassForm = new ForgotPasswordForm();
-            forgotPassForm.Show();
         }
     }
 }

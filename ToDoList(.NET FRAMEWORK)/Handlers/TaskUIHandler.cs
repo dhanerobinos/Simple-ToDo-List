@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToDoList.Interfaces
+namespace ToDoList_.NET_FRAMEWORK_.Handlers
 {
-    public interface IDeletableForm<T>
+    internal class TaskUIHandler
     {
-        T GetSelectedItem(); 
     }
 }

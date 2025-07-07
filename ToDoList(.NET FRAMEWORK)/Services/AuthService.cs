@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ToDoList.DataAcess;
+using ToDoList.Models;
 using ToDoList.Services;
 
 
@@ -14,35 +15,54 @@ namespace ToDoList.Services
 {
     public class AuthService
     {
-        private PasswordService passwordService;
-        public bool ValidateLogin(string username, string password)
+
+        private PasswordService passwordService = new PasswordService(); 
+                                                                         
+        public Users ValidateLogin(string username, string password)
         {
             try
             {
-
                 using (var connection = new SqlConnection(DbConnection.ConnectionString))
                 {
                     connection.Open();
-                    string query = "SELECT Id FROM Users WHERE Username = @username AND Password = @password";
+
+                    string query = "SELECT UserID, Username, Password FROM Users WHERE Username = @username";
 
                     using (var cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@username", username);
-                        cmd.Parameters.AddWithValue("@password", password);
 
-                        int count = (int)cmd.ExecuteScalar();
-                        return count > 0;
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string storedHashedPassword = reader["Password"].ToString();
+                                string hashedInputPassword = passwordService.HashPassword(password);
+
+                                if (storedHashedPassword == hashedInputPassword)
+                                {
+                                    return new Users
+                                    {
+                                        UserID = Convert.ToInt32(reader["UserID"]),
+                                        username = reader["Username"].ToString()
+                                    };
+                                }
+                            }
+                        }
                     }
-
                 }
+
+                return null;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return false;
+                return null;
             }
-
         }
+
+
+
 
         public bool RegisterUser(string username, string password)
         {
@@ -64,8 +84,8 @@ namespace ToDoList.Services
                         }
                     }
                 }
-
                 string hashedPassword = passwordService.HashPassword(password);
+
 
                 //Register a new user
                 using (var connection = new SqlConnection(DbConnection.ConnectionString))
@@ -87,7 +107,6 @@ namespace ToDoList.Services
                 return false;
             }
         }
-
         public bool ResetPassword(string username, string newPassword)
         {
             try
