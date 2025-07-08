@@ -312,6 +312,14 @@ namespace ToDoList
                 }
             }
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            _currentUser = null; 
+            this.Close();
+            Application.Restart();
+
+        }
     }
 }
 

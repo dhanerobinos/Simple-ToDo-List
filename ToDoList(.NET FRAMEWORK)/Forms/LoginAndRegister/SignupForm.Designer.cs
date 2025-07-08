@@ -36,7 +36,7 @@
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbConfirmPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.linkLogin = new System.Windows.Forms.LinkLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -108,13 +108,13 @@
             this.label4.TabIndex = 19;
             this.label4.Text = "Create Account";
             // 
-            // textBox1
+            // tbConfirmPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(461, 247);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 21;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.tbConfirmPassword.Location = new System.Drawing.Point(461, 247);
+            this.tbConfirmPassword.Name = "tbConfirmPassword";
+            this.tbConfirmPassword.Size = new System.Drawing.Size(120, 20);
+            this.tbConfirmPassword.TabIndex = 21;
+            this.tbConfirmPassword.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -166,7 +166,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.linkLogin);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbConfirmPassword);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSignup);
@@ -194,7 +194,7 @@
         private System.Windows.Forms.TextBox tbUsername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbConfirmPassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel linkLogin;
         private System.Windows.Forms.PictureBox pictureBox3;

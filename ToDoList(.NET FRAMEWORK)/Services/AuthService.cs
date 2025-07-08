@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ToDoList.DataAcess;
 using ToDoList.Models;
-using ToDoList.Services;
+
 
 
 namespace ToDoList.Services
@@ -61,9 +56,6 @@ namespace ToDoList.Services
             }
         }
 
-
-
-
         public bool RegisterUser(string username, string password)
         {
             try
@@ -71,7 +63,7 @@ namespace ToDoList.Services
                 using (var connection = new SqlConnection(DbConnection.ConnectionString))
                 {
                     connection.Open();
-                    // Check if the username already exists
+                   
                     string checkQuery = "SELECT COUNT(*) FROM Users WHERE Username = @username";
                     using (var checkCmd = new SqlCommand(checkQuery, connection))
                     {
@@ -84,10 +76,9 @@ namespace ToDoList.Services
                         }
                     }
                 }
+
+              
                 string hashedPassword = passwordService.HashPassword(password);
-
-
-                //Register a new user
                 using (var connection = new SqlConnection(DbConnection.ConnectionString))
                 {
                     connection.Open();
@@ -97,29 +88,6 @@ namespace ToDoList.Services
                         insertCmd.Parameters.AddWithValue("@username", username);
                         insertCmd.Parameters.AddWithValue("@password", hashedPassword);
                         int rowsAffected = insertCmd.ExecuteNonQuery();
-                        return rowsAffected > 0;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-        }
-        public bool ResetPassword(string username, string newPassword)
-        {
-            try
-            {
-                using (var connection = new SqlConnection(DbConnection.ConnectionString))
-                {
-                    connection.Open();
-                    string updateQuery = "UPDATE Users SET Password = @newPassword & Username=@username";
-                    using (var updateCmd = new SqlCommand(updateQuery, connection))
-                    {
-                        updateCmd.Parameters.AddWithValue("@username", username);
-                        updateCmd.Parameters.AddWithValue("@newPassword", newPassword);
-                        int rowsAffected = updateCmd.ExecuteNonQuery();
                         return rowsAffected > 0;
                     }
                 }

@@ -23,14 +23,19 @@ namespace ToDoList.Forms
         {
             string username = tbUsername.Text;
             string password = tbPassword.Text;
+            string confirmPassword = tbConfirmPassword.Text;
 
             if (username == null || password == null)
             {
                 MessageBox.Show("Username and Password cannot be empty.");
             }
+            else if (password !=confirmPassword)
+            {
+                MessageBox.Show("Passwords do not match. Please try again.");
+            }
+
             else if (_authService.RegisterUser(username, password))
             {
-                
                 MessageBox.Show("Registration successful! You can now log in.");
                 this.Hide();
                 LoginForm loginForm = new LoginForm();

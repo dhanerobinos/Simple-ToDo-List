@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgotPasswordForm));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbConfirm = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnSignup = new System.Windows.Forms.Button();
+            this.btnForgotPassword = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -45,13 +45,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbConfirm
             // 
-            this.textBox1.Location = new System.Drawing.Point(447, 283);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 20);
-            this.textBox1.TabIndex = 31;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.tbConfirm.Location = new System.Drawing.Point(447, 283);
+            this.tbConfirm.Name = "tbConfirm";
+            this.tbConfirm.Size = new System.Drawing.Size(165, 20);
+            this.tbConfirm.TabIndex = 31;
+            this.tbConfirm.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -72,16 +72,17 @@
             this.label4.TabIndex = 29;
             this.label4.Text = "Reset Password";
             // 
-            // btnSignup
+            // btnForgotPassword
             // 
-            this.btnSignup.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnSignup.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSignup.Location = new System.Drawing.Point(547, 309);
-            this.btnSignup.Name = "btnSignup";
-            this.btnSignup.Size = new System.Drawing.Size(65, 23);
-            this.btnSignup.TabIndex = 28;
-            this.btnSignup.Text = "enter";
-            this.btnSignup.UseVisualStyleBackColor = false;
+            this.btnForgotPassword.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnForgotPassword.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnForgotPassword.Location = new System.Drawing.Point(547, 309);
+            this.btnForgotPassword.Name = "btnForgotPassword";
+            this.btnForgotPassword.Size = new System.Drawing.Size(65, 23);
+            this.btnForgotPassword.TabIndex = 28;
+            this.btnForgotPassword.Text = "enter";
+            this.btnForgotPassword.UseVisualStyleBackColor = false;
+            this.btnForgotPassword.Click += new System.EventHandler(this.btnForgotPassword_Click);
             // 
             // label3
             // 
@@ -120,13 +121,12 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // textBox2
+            // tbUsername
             // 
-            this.textBox2.Location = new System.Drawing.Point(447, 231);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(165, 20);
-            this.textBox2.TabIndex = 34;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.tbUsername.Location = new System.Drawing.Point(447, 231);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(165, 20);
+            this.tbUsername.TabIndex = 34;
             // 
             // label1
             // 
@@ -164,13 +164,13 @@
             this.ClientSize = new System.Drawing.Size(692, 550);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbConfirm);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnSignup);
+            this.Controls.Add(this.btnForgotPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.label2);
@@ -187,15 +187,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbConfirm;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnSignup;
+        private System.Windows.Forms.Button btnForgotPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbUsername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;

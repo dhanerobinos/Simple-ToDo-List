@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.toDoListAppDBDataSet1 = new ToDoList.ToDoListAppDBDataSet();
             this.taskPanel = new System.Windows.Forms.Panel();
+            this.btnSaveTask = new FontAwesome.Sharp.IconButton();
+            this.tbTitle = new System.Windows.Forms.TextBox();
+            this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
             this.editPanel = new System.Windows.Forms.Panel();
             this.btnEditSave = new FontAwesome.Sharp.IconButton();
             this.tbEditTask = new System.Windows.Forms.TextBox();
             this.dtpEditDueDate = new System.Windows.Forms.DateTimePicker();
-            this.btnSaveTask = new FontAwesome.Sharp.IconButton();
-            this.tbTitle = new System.Windows.Forms.TextBox();
-            this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
             this.btnAddTasks = new FontAwesome.Sharp.IconButton();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
             this.btnComplete = new FontAwesome.Sharp.IconButton();
@@ -50,6 +50,7 @@
             this.iconbtnTasks = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.toDoListAppDBDataSet1)).BeginInit();
             this.taskPanel.SuspendLayout();
             this.editPanel.SuspendLayout();
@@ -65,7 +66,6 @@
             // 
             // taskPanel
             // 
-            this.taskPanel.Controls.Add(this.editPanel);
             this.taskPanel.Controls.Add(this.btnSaveTask);
             this.taskPanel.Controls.Add(this.tbTitle);
             this.taskPanel.Controls.Add(this.dtpDueDate);
@@ -75,12 +75,42 @@
             this.taskPanel.TabIndex = 9;
             this.taskPanel.Visible = false;
             // 
+            // btnSaveTask
+            // 
+            this.btnSaveTask.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnSaveTask.IconColor = System.Drawing.Color.Black;
+            this.btnSaveTask.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSaveTask.Location = new System.Drawing.Point(3, 0);
+            this.btnSaveTask.Name = "btnSaveTask";
+            this.btnSaveTask.Size = new System.Drawing.Size(55, 53);
+            this.btnSaveTask.TabIndex = 11;
+            this.btnSaveTask.UseVisualStyleBackColor = true;
+            this.btnSaveTask.Click += new System.EventHandler(this.btnSaveTask_Click);
+            // 
+            // tbTitle
+            // 
+            this.tbTitle.BackColor = System.Drawing.SystemColors.Control;
+            this.tbTitle.Location = new System.Drawing.Point(63, 19);
+            this.tbTitle.Name = "tbTitle";
+            this.tbTitle.Size = new System.Drawing.Size(433, 20);
+            this.tbTitle.TabIndex = 10;
+            // 
+            // dtpDueDate
+            // 
+            this.dtpDueDate.CalendarForeColor = System.Drawing.SystemColors.Info;
+            this.dtpDueDate.CalendarMonthBackground = System.Drawing.SystemColors.Info;
+            this.dtpDueDate.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtpDueDate.Location = new System.Drawing.Point(502, 19);
+            this.dtpDueDate.Name = "dtpDueDate";
+            this.dtpDueDate.Size = new System.Drawing.Size(32, 20);
+            this.dtpDueDate.TabIndex = 1;
+            // 
             // editPanel
             // 
             this.editPanel.Controls.Add(this.btnEditSave);
             this.editPanel.Controls.Add(this.tbEditTask);
             this.editPanel.Controls.Add(this.dtpEditDueDate);
-            this.editPanel.Location = new System.Drawing.Point(2, 0);
+            this.editPanel.Location = new System.Drawing.Point(167, 428);
             this.editPanel.Name = "editPanel";
             this.editPanel.Size = new System.Drawing.Size(544, 56);
             this.editPanel.TabIndex = 12;
@@ -116,36 +146,6 @@
             this.dtpEditDueDate.Size = new System.Drawing.Size(32, 20);
             this.dtpEditDueDate.TabIndex = 1;
             // 
-            // btnSaveTask
-            // 
-            this.btnSaveTask.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.btnSaveTask.IconColor = System.Drawing.Color.Black;
-            this.btnSaveTask.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSaveTask.Location = new System.Drawing.Point(3, 0);
-            this.btnSaveTask.Name = "btnSaveTask";
-            this.btnSaveTask.Size = new System.Drawing.Size(55, 53);
-            this.btnSaveTask.TabIndex = 11;
-            this.btnSaveTask.UseVisualStyleBackColor = true;
-            this.btnSaveTask.Click += new System.EventHandler(this.btnSaveTask_Click);
-            // 
-            // tbTitle
-            // 
-            this.tbTitle.BackColor = System.Drawing.SystemColors.Control;
-            this.tbTitle.Location = new System.Drawing.Point(63, 19);
-            this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(433, 20);
-            this.tbTitle.TabIndex = 10;
-            // 
-            // dtpDueDate
-            // 
-            this.dtpDueDate.CalendarForeColor = System.Drawing.SystemColors.Info;
-            this.dtpDueDate.CalendarMonthBackground = System.Drawing.SystemColors.Info;
-            this.dtpDueDate.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtpDueDate.Location = new System.Drawing.Point(502, 19);
-            this.dtpDueDate.Name = "dtpDueDate";
-            this.dtpDueDate.Size = new System.Drawing.Size(32, 20);
-            this.dtpDueDate.TabIndex = 1;
-            // 
             // btnAddTasks
             // 
             this.btnAddTasks.IconChar = FontAwesome.Sharp.IconChar.Plus;
@@ -167,7 +167,7 @@
             this.btnDelete.IconColor = System.Drawing.Color.Black;
             this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDelete.IconSize = 20;
-            this.btnDelete.Location = new System.Drawing.Point(625, 22);
+            this.btnDelete.Location = new System.Drawing.Point(629, 25);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(84, 34);
             this.btnDelete.TabIndex = 6;
@@ -185,7 +185,7 @@
             this.btnComplete.IconColor = System.Drawing.Color.Black;
             this.btnComplete.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnComplete.IconSize = 30;
-            this.btnComplete.Location = new System.Drawing.Point(432, 24);
+            this.btnComplete.Location = new System.Drawing.Point(426, 25);
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(118, 33);
             this.btnComplete.TabIndex = 10;
@@ -210,10 +210,10 @@
             this.btnEdit.IconChar = FontAwesome.Sharp.IconChar.Pen;
             this.btnEdit.IconColor = System.Drawing.Color.Black;
             this.btnEdit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEdit.IconSize = 30;
-            this.btnEdit.Location = new System.Drawing.Point(547, 23);
+            this.btnEdit.IconSize = 25;
+            this.btnEdit.Location = new System.Drawing.Point(534, 25);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(72, 32);
+            this.btnEdit.Size = new System.Drawing.Size(89, 32);
             this.btnEdit.TabIndex = 11;
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -319,6 +319,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.iconbtnTasks);
             this.panel1.Controls.Add(this.iconbtnMyday);
@@ -329,11 +330,31 @@
             this.panel1.Size = new System.Drawing.Size(160, 494);
             this.panel1.TabIndex = 0;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
+            this.btnLogout.IconColor = System.Drawing.Color.White;
+            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLogout.IconSize = 30;
+            this.btnLogout.Location = new System.Drawing.Point(0, 439);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(177, 52);
+            this.btnLogout.TabIndex = 7;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 541);
+            this.Controls.Add(this.editPanel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnComplete);
@@ -381,5 +402,6 @@
         private FontAwesome.Sharp.IconButton iconbtnTasks;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton btnLogout;
     }
 }

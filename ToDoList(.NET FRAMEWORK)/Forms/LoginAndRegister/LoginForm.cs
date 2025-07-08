@@ -57,5 +57,10 @@ namespace ToDoList.Forms
             SignupForm signupForm = new SignupForm();
             signupForm.Show();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
